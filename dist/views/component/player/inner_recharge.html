@@ -1,0 +1,243 @@
+<div class="layadmin-tabsbody-item layui-show">
+    <div class="layui-fluid">
+
+        <div>
+            <div style="background-color: #FFF;padding: 0 10px;margin-top: 10px;">
+                <span class="layui-breadcrumb layui-show" lay-separator="/" style="padding: 10px 0;visibility: visible;">
+                  <a href="#index">首页</a>
+                  <a>玩家管理</a>
+                  <a><cite>内部充值管理</cite></a>
+                </span>
+            </div>
+            <div class="layui-tab layui-tab-brief">
+                <ul class="layui-tab-title" style="background-color: #FFF;">
+                    <li class="layui-this">单个ID充值</li>
+                    <li>充值流水</li>
+                </ul>
+                <div class="layui-tab-content" style="margin-top: 15px;padding: 0;">
+                    <div class="layui-tab-item layui-show">
+                        <div class="layui-row">
+                            <div class="layui-col-lg8" style="padding-right: 10px;">
+                                <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">角色ID</div>
+                                        <div class="layui-input-inline">
+                                            <input type="number" placeholder="角色ID" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">充值金额</div>
+                                        <div class="layui-input-inline">
+                                            <input type="number" placeholder="充值金额" class="layui-input" min="0">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">元宝增加</div>
+                                        <div class="layui-input-inline">
+                                            <input type="number" placeholder="元宝增加" class="layui-input" min="0">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">增加流水</div>
+                                        <div class="layui-input-block">
+                                            <input type="radio" name="addRecord" value="1" title="是">
+                                            <input type="radio" name="addRecord" value="0" title="否" checked>
+                                        </div>
+                                    </div>
+
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">首充金额</div>
+                                        <div class="layui-input-inline">
+                                            <select name="rechargeMoney" lay-verify="required">
+                                                <option value=""></option>
+                                                <option value="6">6</option>
+                                                <option value="30">30</option>
+                                                <option value="68">68</option>
+                                                <option value="198">198</option>
+                                                <option value="328">328</option>
+                                                <option value="648">648</option>
+                                                <option value="0">不是首充</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">充值类型</div>
+                                        <div class="layui-input-inline">
+                                            <select name="rechargeMoney" lay-verify="required">
+                                                <option value=""></option>
+                                                <option value="1">类型1</option>
+                                                <option value="2">类型2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">充值理由</div>
+                                        <div class="layui-input-block">
+                                            <textarea name="orderReason" placeholder="请输入充值理由"
+                                                      class="layui-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="submit">提交审核</button>
+                                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!--导入导出数据-->
+                                <div style="margin-top: 15px;background-color: #FFF;padding: 15px;">
+                                    <div class="layui-collapse" lay-accordion>
+                                        <div class="layui-colla-item">
+                                            <h2 class="layui-colla-title">导入数据</h2>
+                                            <div class="layui-colla-content">内容区域</div>
+                                        </div>
+                                    </div>
+                                    <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label" style="text-align: left;">备注</div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" placeholder="备注/事件/操作人" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label" style="text-align: left;">密码</div>
+                                            <div class="layui-input-inline">
+                                                <input type="password" placeholder="请输入密码" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-input-block">
+                                                <button class="layui-btn" lay-submit lay-filter="">充值审核</button>
+                                                <button class="layui-btn" lay-submit lay-filter="">导出数据</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <div style="padding:0 15px;">
+                                        <div class="" style="padding: 15px;">查询结果</div>
+                                        <div class="" style="padding: 15px;">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--月/年卡充值-->
+                            <div class="layui-col-lg4" style="padding-left: 10px;">
+                                <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">月/年卡</div>
+                                        <div class="layui-input-block">
+                                            <input type="radio" name="orderType" value="1" title="月卡充值" checked>
+                                            <input type="radio" name="orderType" value="2" title="年卡充值">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">充值类型</div>
+                                        <div class="layui-input-block">
+                                            <select name="rechargeMoney" lay-verify="required">
+                                                <option value=""></option>
+                                                <option value="1">类型1</option>
+                                                <option value="2">类型2</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">充值理由</div>
+                                        <div class="layui-input-block">
+                                            <textarea name="orderReason" placeholder="请输入充值理由"
+                                                      class="layui-textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="submit">提交审核</button>
+                                        </div>
+                                    </div>
+                                    <div class="layui-input-block" style="color: #888;">
+                                        提示：月卡补单仅增加玩家的月卡时间，主要针对充值2次月卡的问题！！！
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--充值流水-->
+                    <div class="layui-tab-item">
+                        <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                            <div class="layui-row">
+                                <div class="layui-col-lg4 layui-col-md6 layui-col-sm6">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="text-align: left;">开始时间</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" id="startTime" required lay-verify="required"
+                                                   placeholder="请选择开始时间" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md6 layui-col-sm6">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="text-align: left;">结束时间</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" id="endTime" required lay-verify="required"
+                                                   placeholder="请选择结束时间" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4" style="padding-left: 20px;">
+                                    <span data-content="1"
+                                          style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">今日</span>
+                                    <span data-content="2"
+                                          style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">昨日</span>
+                                    <span data-content="3"
+                                          style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近7日</span>
+                                    <span data-content="4"
+                                          style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近30日</span>
+                                    <span data-content="5"
+                                          style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近90日</span>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-label" style="text-align: left;">角色ID</div>
+                                <div class="layui-input-inline">
+                                    <input type="number" placeholder="角色ID" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit lay-filter="add">查询</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
+                            <div class="" style="padding: 15px;">查询结果</div>
+                            <div class="" style="padding: 15px;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            layui.use(['form', 'element', 'laydate'], function () {
+                var form = layui.form;
+                form.render();
+                var element = layui.element;
+                element.render();
+                var laydate = layui.laydate;
+                laydate.render({
+                    elem: '#startTime',
+                    type: 'datetime',
+                    max: 0,
+                });
+                laydate.render({
+                    elem: '#endTime',
+                    type: 'datetime',
+                    max: 0,
+                });
+            });
+
+        </script>
+    </div>
+</div>

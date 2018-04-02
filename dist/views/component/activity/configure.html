@@ -1,0 +1,63 @@
+<div class="layadmin-tabsbody-item layui-show">
+    <div class="layui-fluid">
+        <div>
+            <div style="background-color: #FFF;padding: 0 10px;margin-top: 10px;">
+                <span class="layui-breadcrumb layui-show" lay-separator="/" style="padding: 10px 0;visibility: visible;">
+                  <a href="#index">首页</a>
+                  <a>活动管理</a>
+                  <a><cite>活动配置</cite></a>
+                </span>
+            </div>
+            <form class="layui-form" style="margin-top: 10px;background-color: #FFF;padding: 15px;">
+                <div class="layui-form-item">
+                    <div class="layui-form-label" style="text-align: left;">活动类型</div>
+                    <div class="layui-input-inline">
+                        <select name="rechargeMoney" lay-verify="required">
+                            <option value="0">所有类型</option>
+                            <option value="1">类型1</option>
+                            <option value="2">类型2</option>
+                            <option value="3">类型3</option>
+                            <option value="4">类型4</option>
+                            <option value="5">类型1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-form-label" style="text-align: left;">活动名称</div>
+                    <div class="layui-input-inline">
+                        <select name="rechargeMoney" lay-verify="required">
+                            <option value="0">所有名称</option>
+                            <option value="1">名称1</option>
+                            <option value="2">名称2</option>
+                            <option value="3">名称3</option>
+                            <option value="4">名称4</option>
+                            <option value="5">名称1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="add">查询</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+            <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
+                <div class="" style="padding: 15px;">查询结果</div>
+                <div class="" style="padding: 15px;">
+
+                </div>
+            </div>
+        </div>
+
+        <script>
+            layui.use(['form','element'], function () {
+                var form = layui.form;
+                form.render();
+                var element=layui.element;
+                element.render();
+            });
+
+        </script>
+    </div>
+</div>

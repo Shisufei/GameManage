@@ -1,0 +1,98 @@
+<div class="layadmin-tabsbody-item layui-show">
+    <div class="layui-fluid">
+        <div>
+            <div style="background-color: #FFF;padding: 0 10px;margin-top: 10px;">
+                <span class="layui-breadcrumb layui-show" lay-separator="/" style="padding: 10px 0;visibility: visible;">
+                  <a href="#index">首页</a>
+                  <a>玩家管理</a>
+                  <a><cite>玩家信息查询</cite></a>
+                </span>
+            </div>
+            <div class="layui-tab layui-tab-brief">
+                <ul class="layui-tab-title" style="background-color: #FFF;">
+                    <li class="layui-this">查询玩家信息</li>
+                    <li>查询所有玩家</li>
+                </ul>
+                <div class="layui-tab-content" style="margin-top: 15px;padding: 0;">
+                    <!--查询玩家信息-->
+                    <div class="layui-tab-item layui-show">
+                        <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                            <div class="layui-form-item">
+                                <div class="layui-form-label" style="text-align: left;">查询条件</div>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="searchCondition" value="1" title="编号查询">
+                                    <input type="radio" name="searchCondition" value="2" title="设备号查询">
+                                    <input type="radio" name="searchCondition" value="3" title="昵称查询">
+                                    <input type="radio" name="searchCondition" value="4" title="Guid查询">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-label" style="text-align: left;">关键字</div>
+                                <div class="layui-input-block">
+                                    <input type="text" placeholder="请输入关键字，输入多个关键字请使用英文逗号分隔" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit lay-filter="info_search">查询</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
+                            <div class="" style="padding: 15px;">查询结果</div>
+                            <div class="" style="padding: 15px;">
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--查询所有玩家-->
+                    <div class="layui-tab-item">
+                        <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                            <div class="layui-form-item">
+                                <div class="layui-form-label" style="text-align: left;">查询方式</div>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="searchType" value="1" title="精确查询" checked>
+                                    <input type="radio" name="searchType" value="2" title="模糊查询">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-label" style="text-align: left;">玩家编号</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" placeholder="请输入编号查询" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-label" style="text-align: left;">玩家昵称</div>
+                                <div class="layui-input-inline">
+                                    <input type="text" placeholder="请输入昵称查询" class="layui-input" disabled>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit lay-filter="alluser_search">查询</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
+                            <div class="" style="padding: 15px;">查询结果</div>
+                            <div class="" style="padding: 15px;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            layui.use(['form','element'], function () {
+                var form = layui.form;
+                form.render();
+                var element=layui.element;
+                element.render();
+            });
+        </script>
+    </div>
+</div>

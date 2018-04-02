@@ -1,0 +1,237 @@
+<div class="layadmin-tabsbody-item layui-show">
+    <div class="layui-fluid">
+        <div>
+            <div style="background-color: #FFF;padding: 0 10px;margin-top: 10px;">
+                <span class="layui-breadcrumb layui-show" lay-separator="/" style="padding: 10px 0;visibility: visible;">
+                  <a href="#index">首页</a>
+                  <a>玩家管理</a>
+                  <a><cite>游戏聊天配置</cite></a>
+                </span>
+            </div>
+            <div class="layui-tab layui-tab-brief">
+                <ul class="layui-tab-title" style="background-color: #FFF;">
+                    <li class="layui-this">聊天禁言</li>
+                    <li>聊天举报</li>
+                    <li>聊天禁言关键字</li>
+                    <li>聊天配置</li>
+                </ul>
+                <div class="layui-tab-content" style="margin-top: 15px;padding: 0;">
+                    <!--聊天禁言-->
+                    <div class="layui-tab-item layui-show">
+                        <div class="layui-row">
+                            <div class="layui-col-lg6" style="padding-right: 10px;">
+                                <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">查询方式</div>
+                                        <div class="layui-input-block">
+                                            <input type="radio" name="searchType" value="1" title="玩家ID" checked>
+                                            <input type="radio" name="searchType" value="2" title="设备号">
+                                            <input type="radio" name="searchType" value="3" title="设备IDFA">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">玩家ID</div>
+                                        <div class="layui-input-inline">
+                                            <input type="number" placeholder="请输入玩家ID" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">设备号</div>
+                                        <div class="layui-input-inline">
+                                            <input type="number" placeholder="请输入设备号" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">设备IDFA</div>
+                                        <div class="layui-input-inline">
+                                            <input type="number" placeholder="请输入设备IDFA" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="stateSearch">查询状态</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div style="border-top: 1px solid #EEE;background-color: #FFF;padding:0 15px;">
+                                    <div class="" style="padding: 15px;">查询结果</div>
+                                    <div class="" style="padding: 15px;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-lg6" style="padding-left: 10px;">
+                                <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">操作类型</div>
+                                        <div class="layui-input-block">
+                                            <input type="radio" name="operateType" value="1" title="禁言" checked>
+                                            <input type="radio" name="operateType" value="2" title="解禁">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">时长(min)</div>
+                                        <div class="layui-input-inline">
+                                            <input type="number" placeholder="请输入禁止时长" min="0" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">禁止理由</div>
+                                        <div class="layui-input-inline">
+                                            <input type="text" placeholder="请输入禁止理由" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">永远封禁</div>
+                                        <div class="layui-input-block">
+                                            <input type="radio" name="operateType" value="1" title="是">
+                                            <input type="radio" name="operateType" value="0" title="否" checked>
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">解禁理由</div>
+                                        <div class="layui-input-inline">
+                                            <input type="text" placeholder="请输入解禁理由" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="lock">禁止</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--聊天举报-->
+                    <div class="layui-tab-item">
+                        2
+                    </div>
+                    <!--聊天禁言关键字-->
+                    <div class="layui-tab-item">
+                        <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                            <div class="layui-row">
+                                <div class="layui-col-lg8">
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">屏蔽词</div>
+                                        <div class="layui-input-block">
+                                            <input type="text" placeholder="屏蔽词请以英文逗号隔开" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4">
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="add">添加</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row">
+                                <div class="layui-col-lg8">
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">屏蔽词</div>
+                                        <div class="layui-input-block">
+                                            <input type="text" placeholder="输入查询屏蔽词" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4">
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit lay-filter="search">查询</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <div style="background-color: #FFF;padding: 10px;">
+                            <div class="layui-collapse" lay-accordion>
+                                <div class="layui-colla-item">
+                                    <h2 class="layui-colla-title">导入数据</h2>
+                                    <div class="layui-colla-content">内容区域</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
+                            <div class="" style="padding: 15px;">查询结果</div>
+                            <div class="" style="padding: 15px;">
+
+                            </div>
+                            <div style="padding: 15px;">
+                                <button class="layui-btn" lay-submit lay-filter="exportData">导出数据</button>
+                                <button class="layui-btn layui-btn-primary" lay-submit lay-filter="deleteData">删除</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--聊天配置-->
+                    <div class="layui-tab-item">
+                        <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                            <div class="layui-row">
+                                <div class="layui-col-lg4">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label" style="text-align: left;">选择平台</label>
+                                        <div class="layui-input-block">
+                                            <select name="platform" lay-verify="required">
+                                                <option value="1">安卓</option>
+                                                <option value="2">IOS</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4">
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">开始区服</div>
+                                        <div class="layui-input-block">
+                                            <input type="number" placeholder="请输入开始区服" min="1" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4">
+                                    <div class="layui-form-item">
+                                        <div class="layui-form-label" style="text-align: left;">结束区服</div>
+                                        <div class="layui-input-block">
+                                            <input type="number" placeholder="请输入结束区服" min="1" class="layui-input">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-label" style="text-align: left;">选择区服</div>
+                                <div class="layui-input-block">
+                                    <input type="checkbox" name="areaServer" title="1">
+                                    <input type="checkbox" name="areaServer" title="2">
+                                    <input type="checkbox" name="areaServer" title="3">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit lay-filter="add">查询</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
+                            <div class="" style="padding: 15px;">查询结果</div>
+                            <div class="" style="padding: 15px;">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            layui.use(['form','element'], function () {
+                var form = layui.form;
+                form.render();
+                var element=layui.element;
+                element.render();
+            });
+
+        </script>
+    </div>
+</div>

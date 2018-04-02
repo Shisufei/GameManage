@@ -1,0 +1,130 @@
+<div class="layadmin-tabsbody-item layui-show">
+    <div class="layui-fluid">
+
+        <div>
+            <div style="background-color: #FFF;padding: 0 10px;margin-top: 10px;">
+                <span class="layui-breadcrumb layui-show" lay-separator="/" style="padding: 10px 0;visibility: visible;">
+                  <a href="#index">首页</a>
+                  <a>玩家管理</a>
+                  <a><cite>玩家状态修改</cite></a>
+                </span>
+            </div>
+            <form class="layui-form" style="background-color: #FFF;padding: 15px;margin-top: 10px;">
+                <div class="layui-form-item">
+                    <div class="layui-form-label" style="text-align: left;">查询条件</div>
+                    <div class="layui-input-block">
+                        <input type="radio" name="searchCondition" value="1" title="用户编号">
+                        <input type="radio" name="searchCondition" value="2" title="玩家昵称">
+                        <input type="radio" name="searchCondition" value="3" title="设备号">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-form-label" style="text-align: left;">关键字</div>
+                    <div class="layui-input-block">
+                        <input type="text" placeholder="请输入关键字，输入多个关键字请使用英文逗号分隔" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="info_search">查询</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+            <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
+                <div class="" style="padding: 15px;">查询结果</div>
+                <div class="" style="padding: 15px;">
+
+                </div>
+            </div>
+            <form class="layui-form" style="border-top: 1px solid #EEE;background-color: #FFF;padding: 15px;">
+                <div class="layui-form-item">
+                    <div class="layui-form-label" style="text-align: left;">操作类型</div>
+                    <div class="layui-input-block">
+                        <input type="radio" name="operateType" value="1" title="锁定角色" checked>
+                        <input type="radio" name="operateType" value="2" title="禁止改名">
+                        <input type="radio" name="operateType" value="3" title="禁止设备号/帐号/苹果IDFA">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-form-label" style="text-align: left;">时长(min)</div>
+                    <div class="layui-input-inline">
+                        <select name="times" lay-verify="required">
+                            <option value=""></option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="30">30</option>
+                            <option value="60">60(1小时)</option>
+                            <option value="180">180(3小时)</option>
+                            <option value="360">360(6小时)</option>
+                            <option value="720">720(12小时)</option>
+                            <option value="1440">1440(1天)</option>
+                            <option value="2880">2880(2天)</option>
+                            <option value="4320">4320(3天)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-form-label" style="text-align: left;">锁定原因</div>
+                    <div class="layui-input-inline">
+                        <select name="lockReason" lay-verify="required">
+                            <option value=""></option>
+                            <option value="1">代充广告</option>
+                            <option value="2">辱骂玩家</option>
+                            <option value="3">买卖帐号</option>
+                            <option value="4">代充</option>
+                            <option value="5">刷屏</option>
+                            <option value="6">拉人广告</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="text-align: left;">锁定类型</label>
+                    <div class="layui-input-block">
+                        <input type="checkbox" name="lockType" title="永久锁定">
+                        <input type="checkbox" name="lockType" title="角色">
+                        <input type="checkbox" name="lockType" title="排行榜">
+                        <input type="checkbox" name="lockType" title="元宝">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-form-label" style="text-align: left;">修改昵称</div>
+                    <div class="layui-input-inline">
+                        <input type="text" placeholder="修改昵称" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="text-align: left;">操作类型</label>
+                    <div class="layui-input-block">
+                        <input type="checkbox" name="operateType" title="永久改名">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label" style="text-align: left;">禁止类型</label>
+                    <div class="layui-input-block">
+                        <input type="checkbox" name="forbidType" title="永久锁定">
+                        <input type="checkbox" name="forbidType" title="禁止设备号">
+                        <input type="checkbox" name="forbidType" title="禁止帐号">
+                        <input type="checkbox" name="forbidType" title="禁止IDFA">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="lock">加锁</button>
+                        <button class="layui-btn layui-btn-primary" lay-submit lay-filter="unlock">解锁</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <script>
+            layui.use(['form','element'], function () {
+                var form = layui.form;
+                form.render();
+                var element = layui.element;
+                element.render();
+            });
+
+        </script>
+    </div>
+</div>

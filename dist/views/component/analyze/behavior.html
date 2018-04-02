@@ -1,0 +1,81 @@
+<div class="layadmin-tabsbody-item layui-show">
+    <div class="layui-fluid">
+        <div>
+            <div style="background-color: #FFF;padding: 0 10px;margin-top: 10px;">
+                <span class="layui-breadcrumb layui-show" lay-separator="/" style="padding: 10px 0;visibility: visible;">
+                  <a href="#index">首页</a>
+                  <a>玩家分析</a>
+                  <a><cite>行为分析</cite></a>
+                </span>
+            </div>
+            <form class="layui-form" style="margin-top: 10px;background-color: #FFF;padding: 15px;">
+                <div class="layui-row">
+                    <div class="layui-col-lg4 layui-col-md6 layui-col-sm6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="text-align: left;">开始时间</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="startTime" required lay-verify="required" placeholder="请选择开始时间"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md6 layui-col-sm6">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="text-align: left;">结束时间</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="endTime" required lay-verify="required" placeholder="请选择结束时间"
+                                       autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4" style="padding-left: 20px;">
+                        <span data-content="1"
+                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">今日</span>
+                        <span data-content="2"
+                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">昨日</span>
+                        <span data-content="3"
+                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近7日</span>
+                        <span data-content="4"
+                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近30日</span>
+                        <span data-content="5"
+                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近90日</span>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="">查询</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+            <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
+                <div class="" style="padding: 15px;">查询结果</div>
+                <div class="" style="padding: 15px;">
+
+                </div>
+            </div>
+        </div>
+        <script>
+            layui.use(['form','element','laydate'],function () {
+                var form=layui.form;
+                form.render();
+
+                var element=layui.element;
+                element.render();
+
+                var laydate=layui.laydate;
+                laydate.render({
+                    elem: '#startTime',
+                    type: 'datetime',
+                    max:0,
+                });
+                laydate.render({
+                    elem: '#endTime',
+                    type: 'datetime',
+                    max:0,
+                });
+            });
+        </script>
+
+    </div>
+</div>
