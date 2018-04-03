@@ -21,7 +21,7 @@
     <title>泡游数据后台管理系统</title>
     <style>
         /*.layui-layout-admin .layui-body .layadmin-tabsbody-item {*/
-            /*top: 35px;*/
+        /*top: 35px;*/
         /*}*/
 
         .layadmin-side-shrink .layui-layout-admin .layui-logo {
@@ -31,40 +31,50 @@
         .position-r {
             position: relative;
         }
-        .layui-layout-admin .layui-header .layui-nav-child{
+
+        .layui-layout-admin .layui-header .layui-nav-child {
             top: 50px;
         }
+
         .layui-table, .layui-table-view {
             margin: 0;
         }
-        .layui-layout-admin .layui-layout-left .layui-nav-item{
+
+        .layui-layout-admin .layui-layout-left .layui-nav-item {
             margin: 0;
             padding: 0 20px;
             cursor: pointer;
         }
-        .layui-layout-admin .layui-layout-left .layui-nav-item:hover{
+
+        .layui-layout-admin .layui-layout-left .layui-nav-item:hover {
             background-color: #1E9FFF;
-        }
-        .layui-layout-admin .layui-layout-left .layui-nav-item:hover i{
-            color: #FFF;
-        }
-        .layui-layout-admin .layui-layout-right .layui-nav-item:hover{
-            background-color: #1E9FFF;
-        }
-        .layui-layout-admin .layui-layout-right .layui-nav-item:hover i{
-            color: #FFF;
-        }
-        .layui-layout-admin .layui-layout-right .layui-nav-item:hover a cite{
-            color: #FFF;
-        }
-        .layui-layout-admin .layui-layout-right .layui-nav-item:hover a span{
-            border-top-color:#FFF;
         }
 
-        .layui-nav-tree .layui-nav-item a:hover{
+        .layui-layout-admin .layui-layout-left .layui-nav-item:hover i {
+            color: #FFF;
+        }
+
+        .layui-layout-admin .layui-layout-right .layui-nav-item:hover {
+            background-color: #1E9FFF;
+        }
+
+        .layui-layout-admin .layui-layout-right .layui-nav-item:hover i {
+            color: #FFF;
+        }
+
+        .layui-layout-admin .layui-layout-right .layui-nav-item:hover a cite {
+            color: #FFF;
+        }
+
+        .layui-layout-admin .layui-layout-right .layui-nav-item:hover a span {
+            border-top-color: #FFF;
+        }
+
+        .layui-nav-tree .layui-nav-item a:hover {
             border-left: 5px solid #1E9FFF;
         }
-        .layui-nav-tree .layui-nav-child dd:hover{
+
+        .layui-nav-tree .layui-nav-child dd:hover {
             border-left: 0px solid #1E9FFF;
         }
     </style>
@@ -86,9 +96,9 @@
                   </a>
                 </li>-->
                 <!--<li class="layui-nav-item layui-hide-xs" lay-unselect="">-->
-                    <!--<a href="" target="_blank" title="前台">-->
-                        <!--<i class="layui-icon layui-icon-website"></i>-->
-                    <!--</a>-->
+                <!--<a href="" target="_blank" title="前台">-->
+                <!--<i class="layui-icon layui-icon-website"></i>-->
+                <!--</a>-->
                 <!--</li>-->
                 <li class="layui-nav-item" lay-unselect="">
                     <a href="javascript:;" layadmin-event="refresh" title="刷新">
@@ -117,22 +127,22 @@
                     </a>
                 </li>
                 <!--<li class="layui-nav-item layui-hide-xs" lay-unselect="">-->
-                    <!--<a href="javascript:;" layadmin-event="note">-->
-                        <!--<i class="layui-icon layui-icon-note"></i>-->
-                    <!--</a>-->
+                <!--<a href="javascript:;" layadmin-event="note">-->
+                <!--<i class="layui-icon layui-icon-note"></i>-->
+                <!--</a>-->
                 <!--</li>-->
                 <li class="layui-nav-item" lay-unselect="" id="SF_BaseInfo_Btn">
                     <!--<script type="text/html" template="" lay-url="/Manage/json/user/session.js"-->
-                            <!--lay-done="layui.element.render('nav', 'layadmin-layout-right');">-->
-                        <!--<a href="javascript:;">-->
-                            <!--<cite>{{ d.data.username }}</cite>-->
-                        <!--</a>-->
-                        <!--<dl class="layui-nav-child">-->
-                            <!--<dd><a lay-href="set/base/website">基本资料</a></dd>-->
-                            <!--<dd><a lay-href="set/security/">安全设置</a></dd>-->
-                            <!--<hr>-->
-                            <!--<dd layadmin-event="logout" style="text-align: center;"><a>退出</a></dd>-->
-                        <!--</dl>-->
+                    <!--lay-done="layui.element.render('nav', 'layadmin-layout-right');">-->
+                    <!--<a href="javascript:;">-->
+                    <!--<cite>{{ d.data.username }}</cite>-->
+                    <!--</a>-->
+                    <!--<dl class="layui-nav-child">-->
+                    <!--<dd><a lay-href="set/base/website">基本资料</a></dd>-->
+                    <!--<dd><a lay-href="set/security/">安全设置</a></dd>-->
+                    <!--<hr>-->
+                    <!--<dd layadmin-event="logout" style="text-align: center;"><a>退出</a></dd>-->
+                    <!--</dl>-->
                     <!--</script>-->
                     <a href="javascript:;"> <cite>贤心</cite> <span class="layui-nav-more"></span></a>
                     <dl class="layui-nav-child layui-anim layui-anim-upbit" id="SF_BaseInfo_Item">
@@ -144,8 +154,8 @@
                 </li>
 
                 <!--<li class="layui-nav-item layui-hide-xs" lay-unselect="">-->
-                    <!--<a href="javascript:;" layadmin-event="about"><i-->
-                            <!--class="layui-icon layui-icon-more-vertical"></i></a>-->
+                <!--<a href="javascript:;" layadmin-event="about"><i-->
+                <!--class="layui-icon layui-icon-more-vertical"></i></a>-->
                 <!--</li>-->
                 <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-unselect="">
                     <a href="javascript:;" layadmin-event="more"><i class="layui-icon layui-icon-more-vertical"></i></a>
@@ -322,31 +332,31 @@
         </div>
 
         <!--<div class="layadmin-pagetabs" id="LAY_app_tabs" style="padding-left: 0;">-->
-            <!--<div class="layui-icon layadmin-tabs-control" layadmin-event="leftPage">-->
-                <!--&#xe65a;-->
-            <!--</div>-->
-            <!--<div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage">&#xe65b;</div>-->
-            <!--<div class="layui-icon layadmin-tabs-control layui-icon-down">&#xe61a;-->
-                <!--<ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">-->
-                    <!--<li class="layui-nav-item" lay-unselect=""><a href="javascript:;"><span-->
-                            <!--class="layui-nav-more"></span></a>-->
-                        <!--<dl class="layui-nav-child layui-anim-fadein layui-anim layui-anim-upbit">-->
-                            <!--<dd layadmin-event="closeThisTabs"><a href="javascript:;">关闭当前标签页</a></dd>-->
-                            <!--<dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>-->
-                            <!--<dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>-->
-                        <!--</dl>-->
-                    <!--</li>-->
-                    <!--<span class="layui-nav-bar" style="left: 0px; top: 35px; width: 0px; opacity: 0;"></span></ul>-->
-            <!--</div>-->
-            <!--<div class="layui-tab" lay-unauto="" lay-allowclose="true" lay-filter="layadmin-layout-tabs">-->
-                <!--<ul class="layui-tab-title" id="LAY_app_tabsheader" style="left: 40px;">-->
-                    <!--<li lay-id="index">-->
-                        <!--<i class="layui-icon layui-icon-home"></i>-->
-                        <!--<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>-->
-                    <!--</li>-->
-                <!--</ul>-->
+        <!--<div class="layui-icon layadmin-tabs-control" layadmin-event="leftPage">-->
+        <!--&#xe65a;-->
+        <!--</div>-->
+        <!--<div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage">&#xe65b;</div>-->
+        <!--<div class="layui-icon layadmin-tabs-control layui-icon-down">&#xe61a;-->
+        <!--<ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">-->
+        <!--<li class="layui-nav-item" lay-unselect=""><a href="javascript:;"><span-->
+        <!--class="layui-nav-more"></span></a>-->
+        <!--<dl class="layui-nav-child layui-anim-fadein layui-anim layui-anim-upbit">-->
+        <!--<dd layadmin-event="closeThisTabs"><a href="javascript:;">关闭当前标签页</a></dd>-->
+        <!--<dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>-->
+        <!--<dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>-->
+        <!--</dl>-->
+        <!--</li>-->
+        <!--<span class="layui-nav-bar" style="left: 0px; top: 35px; width: 0px; opacity: 0;"></span></ul>-->
+        <!--</div>-->
+        <!--<div class="layui-tab" lay-unauto="" lay-allowclose="true" lay-filter="layadmin-layout-tabs">-->
+        <!--<ul class="layui-tab-title" id="LAY_app_tabsheader" style="left: 40px;">-->
+        <!--<li lay-id="index">-->
+        <!--<i class="layui-icon layui-icon-home"></i>-->
+        <!--<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>-->
+        <!--</li>-->
+        <!--</ul>-->
 
-            <!--</div>-->
+        <!--</div>-->
         <!--</div>-->
 
         <!-- 主体内容 -->
@@ -460,10 +470,10 @@
         //
         // });
         $("a").click(function () {
-           var go_url=$(this).attr("lay-href");
-           if(go_url!=undefined && go_url !=""){
-               location.hash = go_url;
-           }
+            var go_url = $(this).attr("lay-href");
+            if (go_url != undefined && go_url != "") {
+                location.hash = go_url;
+            }
         });
 
 
@@ -538,6 +548,18 @@
             }
 
         });
+        //侧边栏相关
+        $(".layui-side-menu ul .layui-nav-item").click(function () {
+            if(!$(this).hasClass("layui-nav-itemed")){
+                $(".layui-side-menu ul .layui-nav-item").removeClass("layui-nav-itemed");
+            }
+            else {
+                $(this).addClass("layui-nav-itemed").siblings().removeClass("layui-nav-itemed");
+            }
+
+        });
+        //$(".layui-side-menu ul .layui-nav-itemed").removeClass("layui-nav-itemed");
+
         //窗口大小变化时，改变图标方向
         window.onresize = function () {
             var screenWidth = window.innerWidth;
