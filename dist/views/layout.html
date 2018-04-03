@@ -20,10 +20,6 @@
 
     <title>泡游数据后台管理系统</title>
     <style>
-        .layui-side-menu .layui-nav .layui-nav-item .layui-icon {
-            top: 28px !important;
-        }
-
         .layui-layout-admin .layui-body .layadmin-tabsbody-item {
             top: 35px;
         }
@@ -31,6 +27,8 @@
         .layadmin-side-shrink .layui-layout-admin .layui-logo {
             background-size: 100%;
         }
+
+        .position-r{position: relative;}
     </style>
 </head>
 <body class="layui-layout-body" layadmin-themealias="default">
@@ -124,7 +122,7 @@
                 <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu"
                     lay-filter="layadmin-system-side-menu">
                     <li data-name="analyze" data-jump="" class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;" lay-tips="玩家分析" lay-direction="2">
+                        <a href="javascript:;" lay-tips="玩家分析" lay-direction="2" class="position-r">
                             <i class="layui-icon layui-icon-baobiao"></i>
                             <cite>玩家分析</cite>
                             <span class="layui-nav-more"></span>
@@ -154,7 +152,7 @@
                         </dl>
                     </li>
                     <li data-name="player" data-jump="" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="玩家管理" lay-direction="2">
+                        <a href="javascript:;" lay-tips="玩家管理" lay-direction="2" class="position-r">
                             <i class="layui-icon layui-icon-user"></i>
                             <cite>玩家管理</cite>
                             <span class="layui-nav-more"></span>
@@ -197,7 +195,7 @@
                         </dl>
                     </li>
                     <li data-name="game" data-jump="" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="游戏管理" lay-direction="2">
+                        <a href="javascript:;" lay-tips="游戏管理" lay-direction="2" class="position-r">
                             <i class="layui-icon layui-icon-star"></i>
                             <cite>游戏管理</cite>
                             <span class="layui-nav-more"></span>
@@ -224,7 +222,7 @@
                         </dl>
                     </li>
                     <li data-name="activity" data-jump="" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="活动管理" lay-direction="2">
+                        <a href="javascript:;" lay-tips="活动管理" lay-direction="2" class="position-r">
                             <i class="layui-icon layui-icon-fire"></i>
                             <cite>活动管理</cite>
                             <span class="layui-nav-more"></span>
@@ -248,7 +246,7 @@
                         </dl>
                     </li>
                     <li data-name="setting" data-jump="" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="系统设置" lay-direction="2">
+                        <a href="javascript:;" lay-tips="系统设置" lay-direction="2" class="position-r">
                             <i class="layui-icon layui-icon-set"></i>
                             <cite>系统设置</cite>
                             <span class="layui-nav-more"></span>
@@ -266,7 +264,7 @@
                         </dl>
                     </li>
                     <li data-name="cdkey" data-jump="" class="layui-nav-item">
-                        <a href="javascript:;" lay-tips="兑换码管理" lay-direction="2">
+                        <a href="javascript:;" lay-tips="兑换码管理" lay-direction="2" class="position-r">
                             <i class="layui-icon layui-icon-biaoqing"></i>
                             <cite>兑换码管理</cite>
                             <span class="layui-nav-more"></span>
@@ -451,6 +449,7 @@
                 // });
             });
         };
+        //刷新
         $(document).ready(function () {
             var hash = window.location.hash;
             if (hash == "") {
@@ -466,7 +465,6 @@
             }).done(function (e) {
                 $("#LAY_app_body").html(e);
             });
-
         });
 
         //侧边栏收缩展开
