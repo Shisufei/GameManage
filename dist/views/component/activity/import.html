@@ -14,7 +14,7 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label" style="text-align: left;">开始时间</label>
                             <div class="layui-input-block">
-                                <input type="text" id="startTime2" required lay-verify="required" placeholder="请选择开始时间"
+                                <input type="text" id="startTime" required lay-verify="required" placeholder="请选择开始时间"
                                        autocomplete="off" class="layui-input">
                             </div>
                         </div>
@@ -23,7 +23,7 @@
                         <div class="layui-form-item">
                             <label class="layui-form-label" style="text-align: left;">结束时间</label>
                             <div class="layui-input-block">
-                                <input type="text" id="endTime2" required lay-verify="required" placeholder="请选择结束时间"
+                                <input type="text" id="endTime" required lay-verify="required" placeholder="请选择结束时间"
                                        autocomplete="off" class="layui-input">
                             </div>
                         </div>
@@ -103,13 +103,24 @@
             </div>
         </div>
         <script>
-            layui.use(['form', 'element'], function () {
+            layui.use(['form','element','laydate'],function () {
                 var form = layui.form;
-                form.render();
-                var element = layui.element;
+                var laydate = layui.laydate;
+                var element=layui.element;
                 element.render();
-            });
 
+                form.render();
+                laydate.render({
+                    elem: '#startTime',
+                    type: 'datetime',
+                    max: 0,
+                });
+                laydate.render({
+                    elem: '#endTime',
+                    type: 'datetime',
+                    max: 0,
+                });
+            });
         </script>
     </div>
 </div>

@@ -1,0 +1,194 @@
+<!--&lt;!&ndash; 主题设置模板 &ndash;&gt;-->
+
+<!--<script type="text/html" template lay-done="layui.data.theme();">-->
+<!--{{#-->
+<!--var local = layui.data(layui.setter.tableName)-->
+<!--,theme = local.theme || {}-->
+<!--,themeColorIndex =  parseInt((theme && theme.color) ? theme.color.index : 0) || 0;-->
+<!--}}-->
+
+<!--<div class="layui-card-header">-->
+<!--配色方案-->
+<!--</div>-->
+<!--<div class="layui-card-body layadmin-setTheme">-->
+<!--<ul class="layadmin-setTheme-color">-->
+<!--{{# layui.each(layui.setter.theme.color, function(index, item){ }}-->
+<!--<li layadmin-event="setTheme" data-index="{{ index }}" data-alias="{{ item.alias }}"-->
+<!--{{ index === themeColorIndex ? 'class="layui-this"' : '' }} title="{{ item.alias }}">-->
+<!--<div class="layadmin-setTheme-header"></div>-->
+<!--<div class="layadmin-setTheme-side" style="background-color: {{ item.main }};">-->
+<!--<div class="layadmin-setTheme-logo" style="background-color: {{ item.logo }};"></div>-->
+<!--</div>-->
+<!--</li>-->
+<!--{{# }); }}-->
+<!--</ul>-->
+<!--</div>-->
+<!--</script>-->
+
+<!--<script>-->
+<!--layui.data.theme = function(){-->
+<!--layui.use('form', function(){-->
+<!--var form = layui.form-->
+<!--,admin = layui.admin;-->
+
+<!--//监听隐藏开关-->
+<!--form.on('switch(system-theme-sideicon)', function(){-->
+<!--admin.theme({-->
+<!--hideSideIcon: this.checked-->
+<!--})-->
+<!--});-->
+<!--});-->
+<!--};-->
+<!--</script>-->
+
+
+<div class="layui-layer layui-layer-page layui-anim layui-anim-rl layui-layer-adminRight" id="layui-layer2" type="page"
+     times="2" showtime="0" contype="string"
+     style="z-index: 19891016; width: 300px; top: 25px; right: 0;left:auto;position: fixed;">
+    <div id="LAY_adminPopupTheme" class="layui-layer-content">
+        <!--<script type="text/html" template="" lay-done="layui.data.theme();">-->
+        <!--{{#-->
+        <!--var local = layui.data(layui.setter.tableName)-->
+        <!--,theme = local.theme || {}-->
+        <!--,themeColorIndex =  parseInt((theme && theme.color) ? theme.color.index : 0) || 0;-->
+        <!--}}-->
+
+        <!--<div class="layui-card-header">-->
+        <!--配色方案-->
+        <!--</div>-->
+        <!--<div class="layui-card-body layadmin-setTheme">-->
+        <!--<ul class="layadmin-setTheme-color">-->
+        <!--{{# layui.each(layui.setter.theme.color, function(index, item){ }}-->
+        <!--<li layadmin-event="setTheme" data-index="{{ index }}" data-alias="{{ item.alias }}"-->
+        <!--{{ index=== themeColorIndex ?'class="layui-this"' : '' }} title="{{ item.alias }}">-->
+        <!--<div class="layadmin-setTheme-header"></div>-->
+        <!--<div class="layadmin-setTheme-side" style="background-color: {{ item.main }};">-->
+        <!--<div class="layadmin-setTheme-logo" style="background-color: {{ item.logo }};"></div>-->
+        <!--</div>-->
+        <!--</li>-->
+        <!--{{# }); }}-->
+        <!--</ul>-->
+        <!--</div>-->
+        <!--</script>-->
+        <div class="layui-card-header"> 配色方案</div>
+        <div class="layui-card-body layadmin-setTheme">
+            <ul class="layadmin-setTheme-color">
+                <li layadmin-event="setTheme" data-index="0" data-alias="default" class="layui-this" title="default" data-selectedColor="#009688">
+                    <div class="layadmin-setTheme-header"></div>
+                    <div class="layadmin-setTheme-side" style="background-color: #20222A;">
+                        <div class="layadmin-setTheme-logo" style="background-color: undefined;"></div>
+                    </div>
+                </li>
+                <li layadmin-event="setTheme" data-index="1" data-alias="dark-blue" title="dark-blue" data-selectedColor="#3B91FF">
+                    <div class="layadmin-setTheme-header"></div>
+                    <div class="layadmin-setTheme-side" style="background-color: #03152A;">
+                        <div class="layadmin-setTheme-logo" style="background-color: undefined;"></div>
+                    </div>
+                </li>
+                <li layadmin-event="setTheme" data-index="2" data-alias="coffee" title="coffee" data-selectedColor="#A48566">
+                    <div class="layadmin-setTheme-header"></div>
+                    <div class="layadmin-setTheme-side" style="background-color: #2E241B;">
+                        <div class="layadmin-setTheme-logo" style="background-color: undefined;"></div>
+                    </div>
+                </li>
+                <li layadmin-event="setTheme" data-index="3" data-alias="purple-red" title="purple-red" data-selectedColor="#7A4D7B">
+                    <div class="layadmin-setTheme-header"></div>
+                    <div class="layadmin-setTheme-side" style="background-color: #50314F;">
+                        <div class="layadmin-setTheme-logo" style="background-color: undefined;"></div>
+                    </div>
+                </li>
+                <li layadmin-event="setTheme" data-index="4" data-alias="ocean" title="ocean" data-selectedColor="#1E9FFF">
+                    <div class="layadmin-setTheme-header"></div>
+                    <div class="layadmin-setTheme-side" style="background-color: #344058;">
+                        <div class="layadmin-setTheme-logo" style="background-color: #1E9FFF;"></div>
+                    </div>
+                </li>
+                <li layadmin-event="setTheme" data-index="5" data-alias="green" title="green" data-selectedColor="#2F9688">
+                    <div class="layadmin-setTheme-header"></div>
+                    <div class="layadmin-setTheme-side" style="background-color: #3A3D49;">
+                        <div class="layadmin-setTheme-logo" style="background-color: #2F9688;"></div>
+                    </div>
+                </li>
+                <li layadmin-event="setTheme" data-index="6" data-alias="red" title="red" data-selectedColor="#F78400">
+                    <div class="layadmin-setTheme-header"></div>
+                    <div class="layadmin-setTheme-side" style="background-color: #20222A;">
+                        <div class="layadmin-setTheme-logo" style="background-color: #F78400;"></div>
+                    </div>
+                </li>
+                <li layadmin-event="setTheme" data-index="7" data-alias="fashion-red" title="fashion-red" data-selectedColor="#AA3130">
+                    <div class="layadmin-setTheme-header"></div>
+                    <div class="layadmin-setTheme-side" style="background-color: #28333E;">
+                        <div class="layadmin-setTheme-logo" style="background-color: #AA3130;"></div>
+                    </div>
+                </li>
+                <li layadmin-event="setTheme" data-index="8" data-alias="classic-black" title="classic-black" data-selectedColor="#3A3D49">
+                    <div class="layadmin-setTheme-header"></div>
+                    <div class="layadmin-setTheme-side" style="background-color: #24262F;">
+                        <div class="layadmin-setTheme-logo" style="background-color: #3A3D49;"></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <script>
+            layui.data.theme = function () {
+                layui.use('form', function () {
+                    var form = layui.form
+                        , admin = layui.admin;
+
+                    //监听隐藏开关
+                    form.on('switch(system-theme-sideicon)', function () {
+                        admin.theme({
+                            hideSideIcon: this.checked
+                        })
+                    });
+                });
+            };
+        </script>
+        <script>
+            layui.use([], function () {
+                var $ = layui.$;
+                $(document).ready(function () {
+                   var nowTheme=$("body").attr("layadmin-themealias");
+                   $(".layadmin-setTheme-color>li").each(function () {
+                      if($(this).attr("data-alias")==nowTheme) {
+                          $(this).addClass("layui-this");
+                      }
+                      else {
+                          $(this).removeClass("layui-this");
+                      }
+                   });
+                });
+                $(".layadmin-setTheme-color>li").click(function () {
+                    var this_theme = $(this).attr("data-alias");
+                    //console.log("this_theme="+this_theme);
+                    $(".layadmin-setTheme-color>li").removeClass("layui-this");
+                    $(this).addClass("layui-this");
+                    $("body").attr("layadmin-themealias", this_theme);
+                    var sideColor = $(this).find(".layadmin-setTheme-side").css("background-color");
+                    var selectedColor=$(this).attr("data-selectedColor");
+                    console.log("sideColor=" + sideColor);
+                    var logoBack = $(this).find(".layadmin-setTheme-logo").css("background-color");
+                    if (logoBack == "rgba(0, 0, 0, 0)") {
+                        logoBack = sideColor;
+                    }
+                    console.log("logoBack=" + logoBack);
+                    //设置主题
+                    console.log($("#LAY_layadmin_theme"));
+                    var themeText = "";
+                    themeText += '.layui-side-menu, .layadmin-pagetabs .layui-tab-title li:after, .layadmin-pagetabs .layui-tab-title li.layui-this:after, .layui-layer-admin .layui-layer-title, .layadmin-side-shrink .layui-side-menu .layui-nav > .layui-nav-item > .layui-nav-child {';
+                    themeText += 'background-color: '+sideColor+' !important;';
+                    themeText += '}';
+                    themeText += '.layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a {';
+                    themeText += 'background-color: '+selectedColor+' !important;';
+                    themeText += '}';
+                    themeText += '.layui-layout-admin .layui-logo {';
+                    themeText += 'background-color: '+logoBack+' !important;';
+                    themeText += '}';
+
+                    $("#LAY_layadmin_theme").html(themeText);
+                });
+            });
+
+        </script>
+    </div>
+    <span class="layui-layer-setwin"></span><span class="layui-layer-resize"></span></div>

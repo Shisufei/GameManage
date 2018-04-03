@@ -20,15 +20,20 @@
 
     <title>泡游数据后台管理系统</title>
     <style>
-        .layui-layout-admin .layui-body .layadmin-tabsbody-item {
-            top: 35px;
-        }
+        /*.layui-layout-admin .layui-body .layadmin-tabsbody-item {*/
+            /*top: 35px;*/
+        /*}*/
 
         .layadmin-side-shrink .layui-layout-admin .layui-logo {
             background-size: 100%;
         }
 
-        .position-r{position: relative;}
+        .position-r {
+            position: relative;
+        }
+        .layui-layout-admin .layui-header .layui-nav-child{
+            top: 50px;
+        }
     </style>
 </head>
 <body class="layui-layout-body" layadmin-themealias="default">
@@ -47,18 +52,18 @@
                     控制台
                   </a>
                 </li>-->
-                <li class="layui-nav-item layui-hide-xs" lay-unselect="">
-                    <a href="" target="_blank" title="前台">
-                        <i class="layui-icon layui-icon-website"></i>
-                    </a>
-                </li>
+                <!--<li class="layui-nav-item layui-hide-xs" lay-unselect="">-->
+                    <!--<a href="" target="_blank" title="前台">-->
+                        <!--<i class="layui-icon layui-icon-website"></i>-->
+                    <!--</a>-->
+                <!--</li>-->
                 <li class="layui-nav-item" lay-unselect="">
                     <a href="javascript:;" layadmin-event="refresh" title="刷新">
                         <i class="layui-icon layui-icon-refresh"></i>
                     </a>
                 </li>
                 <span class="layui-nav-bar" style="left: 38px; top: 48px; width: 0px; opacity: 0;"></span></ul>
-            <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right">
+            <ul class="layui-nav layui-layout-right" lay-filter="layadmin-layout-right" style="padding-right: 50px;">
 
                 <li class="layui-nav-item" lay-unselect="">
                     <a lay-href="app/message/" layadmin-event="message">
@@ -78,26 +83,26 @@
                         <i class="layui-icon layui-icon-theme"></i>
                     </a>
                 </li>
-                <li class="layui-nav-item layui-hide-xs" lay-unselect="">
-                    <a href="javascript:;" layadmin-event="note">
-                        <i class="layui-icon layui-icon-note"></i>
-                    </a>
-                </li>
-                <li class="layui-nav-item" lay-unselect="">
-                    <script type="text/html" template="" lay-url="/Manage/json/user/session.js"
-                            lay-done="layui.element.render('nav', 'layadmin-layout-right');">
-                        <a href="javascript:;">
-                            <cite>{{ d.data.username }}</cite>
-                        </a>
-                        <dl class="layui-nav-child">
-                            <dd><a lay-href="set/base/website">基本资料</a></dd>
-                            <dd><a lay-href="set/security/">安全设置</a></dd>
-                            <hr>
-                            <dd layadmin-event="logout" style="text-align: center;"><a>退出</a></dd>
-                        </dl>
-                    </script>
+                <!--<li class="layui-nav-item layui-hide-xs" lay-unselect="">-->
+                    <!--<a href="javascript:;" layadmin-event="note">-->
+                        <!--<i class="layui-icon layui-icon-note"></i>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <li class="layui-nav-item" lay-unselect="" id="SF_BaseInfo_Btn">
+                    <!--<script type="text/html" template="" lay-url="/Manage/json/user/session.js"-->
+                            <!--lay-done="layui.element.render('nav', 'layadmin-layout-right');">-->
+                        <!--<a href="javascript:;">-->
+                            <!--<cite>{{ d.data.username }}</cite>-->
+                        <!--</a>-->
+                        <!--<dl class="layui-nav-child">-->
+                            <!--<dd><a lay-href="set/base/website">基本资料</a></dd>-->
+                            <!--<dd><a lay-href="set/security/">安全设置</a></dd>-->
+                            <!--<hr>-->
+                            <!--<dd layadmin-event="logout" style="text-align: center;"><a>退出</a></dd>-->
+                        <!--</dl>-->
+                    <!--</script>-->
                     <a href="javascript:;"> <cite>贤心</cite> <span class="layui-nav-more"></span></a>
-                    <dl class="layui-nav-child layui-anim layui-anim-upbit">
+                    <dl class="layui-nav-child layui-anim layui-anim-upbit" id="SF_BaseInfo_Item">
                         <dd><a lay-href="set/base/website">基本资料</a></dd>
                         <dd><a lay-href="set/security/">安全设置</a></dd>
                         <hr>
@@ -105,10 +110,10 @@
                     </dl>
                 </li>
 
-                <li class="layui-nav-item layui-hide-xs" lay-unselect="">
-                    <a href="javascript:;" layadmin-event="about"><i
-                            class="layui-icon layui-icon-more-vertical"></i></a>
-                </li>
+                <!--<li class="layui-nav-item layui-hide-xs" lay-unselect="">-->
+                    <!--<a href="javascript:;" layadmin-event="about"><i-->
+                            <!--class="layui-icon layui-icon-more-vertical"></i></a>-->
+                <!--</li>-->
                 <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-unselect="">
                     <a href="javascript:;" layadmin-event="more"><i class="layui-icon layui-icon-more-vertical"></i></a>
                 </li>
@@ -283,33 +288,33 @@
             </div>
         </div>
 
-        <div class="layadmin-pagetabs" id="LAY_app_tabs" style="padding-left: 0;">
-            <div class="layui-icon layadmin-tabs-control" layadmin-event="leftPage">
-                &#xe65a;
-            </div>
-            <div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage">&#xe65b;</div>
-            <div class="layui-icon layadmin-tabs-control layui-icon-down">&#xe61a;
-                <ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">
-                    <li class="layui-nav-item" lay-unselect=""><a href="javascript:;"><span
-                            class="layui-nav-more"></span></a>
-                        <dl class="layui-nav-child layui-anim-fadein layui-anim layui-anim-upbit">
-                            <dd layadmin-event="closeThisTabs"><a href="javascript:;">关闭当前标签页</a></dd>
-                            <dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>
-                            <dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>
-                        </dl>
-                    </li>
-                    <span class="layui-nav-bar" style="left: 0px; top: 35px; width: 0px; opacity: 0;"></span></ul>
-            </div>
-            <div class="layui-tab" lay-unauto="" lay-allowclose="true" lay-filter="layadmin-layout-tabs">
-                <ul class="layui-tab-title" id="LAY_app_tabsheader" style="left: 40px;">
-                    <li lay-id="index">
-                        <i class="layui-icon layui-icon-home"></i>
-                        <i class="layui-icon layui-unselect layui-tab-close">ဆ</i>
-                    </li>
-                </ul>
+        <!--<div class="layadmin-pagetabs" id="LAY_app_tabs" style="padding-left: 0;">-->
+            <!--<div class="layui-icon layadmin-tabs-control" layadmin-event="leftPage">-->
+                <!--&#xe65a;-->
+            <!--</div>-->
+            <!--<div class="layui-icon layadmin-tabs-control layui-icon-next" layadmin-event="rightPage">&#xe65b;</div>-->
+            <!--<div class="layui-icon layadmin-tabs-control layui-icon-down">&#xe61a;-->
+                <!--<ul class="layui-nav layadmin-tabs-select" lay-filter="layadmin-pagetabs-nav">-->
+                    <!--<li class="layui-nav-item" lay-unselect=""><a href="javascript:;"><span-->
+                            <!--class="layui-nav-more"></span></a>-->
+                        <!--<dl class="layui-nav-child layui-anim-fadein layui-anim layui-anim-upbit">-->
+                            <!--<dd layadmin-event="closeThisTabs"><a href="javascript:;">关闭当前标签页</a></dd>-->
+                            <!--<dd layadmin-event="closeOtherTabs"><a href="javascript:;">关闭其它标签页</a></dd>-->
+                            <!--<dd layadmin-event="closeAllTabs"><a href="javascript:;">关闭全部标签页</a></dd>-->
+                        <!--</dl>-->
+                    <!--</li>-->
+                    <!--<span class="layui-nav-bar" style="left: 0px; top: 35px; width: 0px; opacity: 0;"></span></ul>-->
+            <!--</div>-->
+            <!--<div class="layui-tab" lay-unauto="" lay-allowclose="true" lay-filter="layadmin-layout-tabs">-->
+                <!--<ul class="layui-tab-title" id="LAY_app_tabsheader" style="left: 40px;">-->
+                    <!--<li lay-id="index">-->
+                        <!--<i class="layui-icon layui-icon-home"></i>-->
+                        <!--<i class="layui-icon layui-unselect layui-tab-close">ဆ</i>-->
+                    <!--</li>-->
+                <!--</ul>-->
 
-            </div>
-        </div>
+            <!--</div>-->
+        <!--</div>-->
 
         <!-- 主体内容 -->
         <div class="layui-body layui-tab-content" id="LAY_app_body">
@@ -322,48 +327,10 @@
 
         <!-- 辅助元素，一般用于移动设备下遮罩 -->
         <div class="layadmin-body-shade" layadmin-event="shade"></div>
-        <!--配色方案-->
-        <div class="layui-layer layui-layer-page layui-anim layui-anim-rl layui-layer-adminRight" id="layui-layer2" type="page" times="2" showtime="0" contype="string" style="z-index: 19891016; width: 300px; top: 25px; left: 1079px;"><div id="LAY_adminPopupTheme" class="layui-layer-content"><script type="text/html" template="" lay-done="layui.data.theme();">
-            {{#
-            var local = layui.data(layui.setter.tableName)
-            ,theme = local.theme || {}
-            ,themeColorIndex =  parseInt((theme && theme.color) ? theme.color.index : 0) || 0;
-            }}
-
-            <div class="layui-card-header">
-                配色方案
-            </div>
-            <div class="layui-card-body layadmin-setTheme">
-                <ul class="layadmin-setTheme-color">
-                    {{# layui.each(layui.setter.theme.color, function(index, item){ }}
-                    <li layadmin-event="setTheme" data-index="{{ index }}" data-alias="{{ item.alias }}"
-                        {{ index === themeColorIndex ? 'class="layui-this"' : '' }} title="{{ item.alias }}">
-                    <div class="layadmin-setTheme-header"></div>
-                    <div class="layadmin-setTheme-side" style="background-color: {{ item.main }};">
-                        <div class="layadmin-setTheme-logo" style="background-color: {{ item.logo }};"></div>
-                    </div>
-                    </li>
-                    {{# }); }}
-                </ul>
-            </div>
-        </script>  <div class="layui-card-header"> 配色方案 </div> <div class="layui-card-body layadmin-setTheme"> <ul class="layadmin-setTheme-color">  <li layadmin-event="setTheme" data-index="0" data-alias="default" class="layui-this" title="default"> <div class="layadmin-setTheme-header"></div> <div class="layadmin-setTheme-side" style="background-color: #20222A;"> <div class="layadmin-setTheme-logo" style="background-color: undefined;"></div> </div> </li>  <li layadmin-event="setTheme" data-index="1" data-alias="dark-blue" title="dark-blue"> <div class="layadmin-setTheme-header"></div> <div class="layadmin-setTheme-side" style="background-color: #03152A;"> <div class="layadmin-setTheme-logo" style="background-color: undefined;"></div> </div> </li>  <li layadmin-event="setTheme" data-index="2" data-alias="coffee" title="coffee"> <div class="layadmin-setTheme-header"></div> <div class="layadmin-setTheme-side" style="background-color: #2E241B;"> <div class="layadmin-setTheme-logo" style="background-color: undefined;"></div> </div> </li>  <li layadmin-event="setTheme" data-index="3" data-alias="purple-red" title="purple-red"> <div class="layadmin-setTheme-header"></div> <div class="layadmin-setTheme-side" style="background-color: #50314F;"> <div class="layadmin-setTheme-logo" style="background-color: undefined;"></div> </div> </li>  <li layadmin-event="setTheme" data-index="4" data-alias="ocean" title="ocean"> <div class="layadmin-setTheme-header"></div> <div class="layadmin-setTheme-side" style="background-color: #344058;"> <div class="layadmin-setTheme-logo" style="background-color: #1E9FFF;"></div> </div> </li>  <li layadmin-event="setTheme" data-index="5" data-alias="green" title="green"> <div class="layadmin-setTheme-header"></div> <div class="layadmin-setTheme-side" style="background-color: #3A3D49;"> <div class="layadmin-setTheme-logo" style="background-color: #2F9688;"></div> </div> </li>  <li layadmin-event="setTheme" data-index="6" data-alias="red" title="red"> <div class="layadmin-setTheme-header"></div> <div class="layadmin-setTheme-side" style="background-color: #20222A;"> <div class="layadmin-setTheme-logo" style="background-color: #F78400;"></div> </div> </li>  <li layadmin-event="setTheme" data-index="7" data-alias="fashion-red" title="fashion-red"> <div class="layadmin-setTheme-header"></div> <div class="layadmin-setTheme-side" style="background-color: #28333E;"> <div class="layadmin-setTheme-logo" style="background-color: #AA3130;"></div> </div> </li>  <li layadmin-event="setTheme" data-index="8" data-alias="classic-black" title="classic-black"> <div class="layadmin-setTheme-header"></div> <div class="layadmin-setTheme-side" style="background-color: #24262F;"> <div class="layadmin-setTheme-logo" style="background-color: #3A3D49;"></div> </div> </li>  </ul> </div> <script>
-            layui.data.theme = function(){
-                layui.use('form', function(){
-                    var form = layui.form
-                        ,admin = layui.admin;
-
-                    //监听隐藏开关
-                    form.on('switch(system-theme-sideicon)', function(){
-                        admin.theme({
-                            hideSideIcon: this.checked
-                        })
-                    });
-                });
-            };
-        </script></div><span class="layui-layer-setwin"></span><span class="layui-layer-resize"></span></div>
     </div>
 </div>
-
+<div class="layui-layer-shade" id="layui-layer-shade1" times="1"
+     style="z-index: 19891014; background-color: rgb(0, 0, 0); opacity: 0.1;display: none;"></div>
 <!--<script src="//res.layui.com/layui/rc/layui.js?t=201800202-1"></script>-->
 
 <script type="text/javascript" src="/Manage/layui/layui.js"></script>
@@ -388,18 +355,18 @@
 
 
 <div class="layui-layer-move"></div>
-<style id="LAY_layadmin_theme">.layui-side-menu, .layadmin-pagetabs .layui-tab-title li:after, .layadmin-pagetabs .layui-tab-title li.layui-this:after, .layui-layer-admin .layui-layer-title, .layadmin-side-shrink .layui-side-menu .layui-nav > .layui-nav-item > .layui-nav-child {
-    background-color: #20222A !important;
-}
+<style id="LAY_layadmin_theme">
+    .layui-side-menu, .layadmin-pagetabs .layui-tab-title li:after, .layadmin-pagetabs .layui-tab-title li.layui-this:after, .layui-layer-admin .layui-layer-title, .layadmin-side-shrink .layui-side-menu .layui-nav > .layui-nav-item > .layui-nav-child {
+        background-color: #20222A !important;
+    }
 
-.layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a {
-    background-color: #009688 !important;
-}
+    .layui-nav-tree .layui-this, .layui-nav-tree .layui-this > a, .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a {
+        background-color: #009688 !important;
+    }
 
-.layui-layout-admin .layui-logo {
-    background-color: #20222A !important;
-}
-
+    .layui-layout-admin .layui-logo {
+        background-color: #20222A !important;
+    }
 </style>
 <script>
     layui.use(['element', 'jquery'], function () {
@@ -410,6 +377,7 @@
         //     bodyElem: '#LAY_app_body>.layadmin-tabsbody-item' //指定tab主体元素项
         // });
         element.render();
+        element.init()
 
 
         //初始化
@@ -437,26 +405,32 @@
             $("dd").removeClass("layui-this");
         });
         //切换
-        $("dd").click(function () {
-            var go_url = $(this).children().attr("lay-href");
-            location.hash = go_url;
-            var title = $(this).children().text();
-
-            // var content="";
-            //  $.ajax({
-            //      url:"./"+go_url+".html",
-            //      method:"get",
-            //  }).done(function (e) {
-            //      content=e;
-            //      //console.log(content);
-            //      element.tabAdd("layadmin-layout-tabs",{
-            //          title:title,
-            //          content:content,
-            //          id:go_url,
-            //
-            //      });
-            //  });
-
+        // $("dd").click(function () {
+        //     var go_url = $(this).children().attr("lay-href");
+        //     location.hash = go_url;
+        //     var title = $(this).children().text();
+        //
+        //     // var content="";
+        //     //  $.ajax({
+        //     //      url:"./"+go_url+".html",
+        //     //      method:"get",
+        //     //  }).done(function (e) {
+        //     //      content=e;
+        //     //      //console.log(content);
+        //     //      element.tabAdd("layadmin-layout-tabs",{
+        //     //          title:title,
+        //     //          content:content,
+        //     //          id:go_url,
+        //     //
+        //     //      });
+        //     //  });
+        //
+        // });
+        $("a").click(function () {
+           var go_url=$(this).attr("lay-href");
+           if(go_url!=undefined && go_url !=""){
+               location.hash = go_url;
+           }
         });
 
 
@@ -565,41 +539,33 @@
             });
         });
 
-        // //选项卡
-        // var active = {
-        //     tabAdd: function(){
-        //         /* 新增一个Tab项 */
-        //         element.tabAdd('demo', {
-        //             title: '新选项'+ (Math.random()*1000|0) /* 用于演示 */
-        //             ,content: '内容'+ (Math.random()*1000|0)
-        //             ,id: new Date().getTime() /* 实际使用一般是规定好的id，这里以时间戳模拟下 */
-        //         })
-        //     }
-        //     ,tabDelete: function(othis){
-        //         /* 删除指定Tab项 */
-        //         element.tabDelete('demo', '22');
-        //         othis.addClass('layui-btn-disabled');
-        //     }
-        //     ,tabChange: function(){
-        //         /* 切换到指定Tab项 */
-        //         element.tabChange('demo', '33');
-        //     }
-        // };
-
-        // $('#component-tabs .site-demo-active').on('click', function(){
-        //     var othis = $(this),
-        //         type = othis.data('type');
-        //     active[type] ? active[type].call(this, othis) : '';
-        // });
-        //
-        // /* Hash地址的定位 */
-        // var layid = router.hash.replace(/^#layid=/, '');
-        // layid && element.tabChange('component-tabs-hash', layid);
-        //
-        // element.on('tab(component-tabs-hash)', function(elem){
-        //     location.hash = '/'+ layui.router().path.join('/') + '#layid=' + $(this).attr('lay-id');
-        // });
-
+        //显示配色方案
+        $(".layui-icon-theme").click(function () {
+            $.ajax({
+                url: "./system/theme.html",
+                method: "POST",
+                data: {}
+            }).done(function (res) {
+                $("body").append(res);
+                //显示遮罩
+                $("#layui-layer-shade1").show();
+            });
+        });
+        //关闭配色方案
+        $("#layui-layer-shade1").click(function () {
+            //关闭遮罩
+            $("#layui-layer-shade1").hide();
+            $("#layui-layer2").remove();
+        });
+        //基本信息
+        $("#SF_BaseInfo_Btn").hover(
+            function () {
+                $("#SF_BaseInfo_Item").show();
+            },
+            function () {
+                $("#SF_BaseInfo_Item").hide();
+            }
+        );
     });
 
 </script>

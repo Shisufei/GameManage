@@ -83,9 +83,23 @@
 
         </div>
         <script>
-            layui.use(['element'],function () {
+            layui.use(['form','element','laydate'],function () {
+                var form = layui.form;
+                var laydate = layui.laydate;
                 var element=layui.element;
                 element.render();
+
+                form.render();
+                laydate.render({
+                    elem: '#startTime',
+                    type: 'datetime',
+                    max: 0,
+                });
+                laydate.render({
+                    elem: '#endTime',
+                    type: 'datetime',
+                    max: 0,
+                });
             });
         </script>
     </div>
