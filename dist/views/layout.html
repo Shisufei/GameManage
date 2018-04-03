@@ -34,6 +34,32 @@
         .layui-layout-admin .layui-header .layui-nav-child{
             top: 50px;
         }
+        .layui-table, .layui-table-view {
+            margin: 0;
+        }
+        .layui-layout-admin .layui-layout-left .layui-nav-item{
+            margin: 0;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+        .layui-layout-admin .layui-layout-left .layui-nav-item:hover{
+            background-color: #009688;
+        }
+        .layui-layout-admin .layui-layout-left .layui-nav-item:hover i{
+            color: #FFF;
+        }
+        .layui-layout-admin .layui-layout-right .layui-nav-item:hover{
+            background-color: #009688;
+        }
+        .layui-layout-admin .layui-layout-right .layui-nav-item:hover i{
+            color: #FFF;
+        }
+        .layui-layout-admin .layui-layout-right .layui-nav-item:hover a cite{
+            color: #FFF;
+        }
+        .layui-layout-admin .layui-layout-right .layui-nav-item:hover a span{
+            border-top-color:#FFF;
+        }
     </style>
 </head>
 <body class="layui-layout-body" layadmin-themealias="default">
@@ -480,27 +506,27 @@
         });
 
         //侧边栏收缩展开
-        $("#LAY_app_flexible").click(function () {
-            var is_right = $(this).hasClass("layui-icon-shrink-right");
+        $(".layadmin-flexible").click(function () {
+            var is_right = $(this).children().children().hasClass("layui-icon-shrink-right");
             var screenWidth = window.innerWidth;
             if (screenWidth < 992) {
                 if (is_right) {
-                    $(this).removeClass("layui-icon-shrink-right").addClass("layui-icon-spread-left");
-                    $(this).parents().find("#LAY_app").removeClass("layadmin-side-spread-sm");
+                    $(this).children().children().removeClass("layui-icon-shrink-right").addClass("layui-icon-spread-left");
+                    $(this).children().children().parents().find("#LAY_app").removeClass("layadmin-side-spread-sm");
                 }
                 else {
-                    $(this).addClass("layui-icon-shrink-right").removeClass("layui-icon-spread-left");
-                    $(this).parents().find("#LAY_app").addClass("layadmin-side-spread-sm");
+                    $(this).children().children().addClass("layui-icon-shrink-right").removeClass("layui-icon-spread-left");
+                    $(this).children().children().parents().find("#LAY_app").addClass("layadmin-side-spread-sm");
                 }
             }
             else {
                 if (is_right) {
-                    $(this).removeClass("layui-icon-shrink-right").addClass("layui-icon-spread-left");
-                    $(this).parents().find("#LAY_app").addClass("layadmin-side-shrink");
+                    $(this).children().children().removeClass("layui-icon-shrink-right").addClass("layui-icon-spread-left");
+                    $(this).children().children().parents().find("#LAY_app").addClass("layadmin-side-shrink");
                 }
                 else {
-                    $(this).addClass("layui-icon-shrink-right").removeClass("layui-icon-spread-left");
-                    $(this).parents().find("#LAY_app").removeClass("layadmin-side-shrink");
+                    $(this).children().children().addClass("layui-icon-shrink-right").removeClass("layui-icon-spread-left");
+                    $(this).children().children().parents().find("#LAY_app").removeClass("layadmin-side-shrink");
                 }
             }
 

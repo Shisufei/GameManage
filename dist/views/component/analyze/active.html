@@ -56,7 +56,15 @@
                         <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
                             <div class="" style="padding: 15px;">查询结果</div>
                             <div class="" style="padding: 15px;">
+                                <table id="allServerTableDAU" lay-filter="allServerTableDAU" lay-even lay-skin="nob">
 
+                                </table>
+                                <table id="allServerTableWAU" lay-filter="allServerTableWAU" lay-even lay-skin="nob">
+
+                                </table>
+                                <table id="allServerTableMAU" lay-filter="allServerTableMAU" lay-even lay-skin="nob">
+
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -143,7 +151,9 @@
                         <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
                             <div class="" style="padding: 15px;">查询结果</div>
                             <div class="" style="padding: 15px;">
+                                <table id="singleServerTable" lay-filter="singleServerTable" lay-even lay-skin="nob">
 
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -152,7 +162,7 @@
         </div>
 
         <script>
-            layui.use(['form', 'element', 'laydate'], function () {
+            layui.use(['form', 'element', 'laydate','table'], function () {
                 var form = layui.form;
                 form.render();
                 var element=layui.element;
@@ -168,6 +178,38 @@
                     elem: '#endTime',
                     type: 'datetime',
                     max: 0,
+                });
+
+
+                var table=layui.table;
+                //全服活跃
+                //DAU
+                table.render({
+                    elem: '#allServerTableDAU',
+                    url: '/Manage/json/tables/analyze/all_server_active.js',
+                    page: true,
+                    //limit:10,
+                    loading: true,
+                    cols: [[
+                        {field: 'date', title: '日期', align: 'left', width: 200, sort: true,},
+                        {field: 'au', title: 'DAU', align: 'left', width: 200, sort: true,},
+                        {field: 'newUser', title: '新增玩家', align: 'left', width: 200,},
+                        {field: 'newPayUser', title: '新增付费玩家', align: 'left', width: 200, sort: true,},
+                        {field: 'dailyPayUser', title: '日总付费玩家', align: 'left', width: 200, sort: true,},
+                    ]],
+                });
+                //单个区服活跃
+                table.render({
+                    elem: '#singleServerTable',
+                    url: '/Manage/json/tables/analyze/single_server_active.js',
+                    page: true,
+                    //limit:10,
+                    loading: true,
+                    cols: [[
+                        {field: 'date', title: '日期', align: 'left', width: 200, sort: true,},
+                        {field: 'server', title: '区服', align: 'left', width: 200,},
+                        {field: 'dailyActive', title: '日活跃数', align: 'left', width: 200, sort: true,},
+                    ]],
                 });
             });
         </script>

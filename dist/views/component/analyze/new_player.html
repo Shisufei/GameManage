@@ -155,7 +155,9 @@
                         <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
                             <div class="" style="padding: 15px;">查询结果</div>
                             <div class="" style="padding: 15px;">
+                                <table id="singleServerTable" lay-filter="singleServerTable" lay-even lay-skin="nob">
 
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -196,7 +198,7 @@
                 var table = layui.table;
                 table.render({
                     elem: '#allServerTable',
-                    url: '/Manage/json/all_server_add.js',
+                    url: '/Manage/json/tables/analyze/all_server_add.js',
                     page: true,
                     //limit:10,
                     loading: true,
@@ -207,13 +209,25 @@
                         {field: 'totalAdd', title: '累计总新增', align: 'left', width: 200, sort: true,}
                     ]],
                 });
-
+                table.render({
+                    elem: '#singleServerTable',
+                    url: '/Manage/json/tables/analyze/single_server_add.js',
+                    page: true,
+                    loading: true,
+                    cols: [[
+                        {field: 'date', title: '日期', align: 'left', width: 200, sort: true,},
+                        {field: 'server', title: '区服', align: 'left', width: 200, sort: true,},
+                        {field: 'dayAdd', title: '日新增', align: 'left', width: 200, sort: true,},
+                        {field: 'payerAdd', title: '新增付费用户', align: 'left', width: 200, sort: true,},
+                        {field: 'totalAdd', title: '累计总新增', align: 'left', width: 200, sort: true,}
+                    ]],
+                });
                 $(".dateSet").click(function () {
                     var dateSet = $(this).attr("data-content");
                     console.log("dateSet=" + dateSet);
                     var startTime = "";
-                    if(dateSet==1){
-                        startTime=new Date().toString();
+                    if (dateSet == 1) {
+                        startTime = new Date().toString();
                     }
                     $("#startTime").val(startTime);
                 });
