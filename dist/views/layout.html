@@ -522,8 +522,10 @@
             });
         });
 
+        //var is_right = $(".layadmin-flexible").children().children().hasClass("layui-icon-shrink-right");
         //侧边栏收缩展开
         $(".layadmin-flexible").click(function () {
+
             var is_right = $(this).children().children().hasClass("layui-icon-shrink-right");
             var screenWidth = window.innerWidth;
             if (screenWidth < 992) {
@@ -546,7 +548,7 @@
                     $(this).children().children().parents().find("#LAY_app").removeClass("layadmin-side-shrink");
                 }
             }
-
+            //is_right=!is_right;
         });
         //侧边栏相关
         $(".layui-side-menu ul .layui-nav-item").click(function () {
@@ -556,7 +558,20 @@
             else {
                 $(this).addClass("layui-nav-itemed").siblings().removeClass("layui-nav-itemed");
             }
-
+            var is_right = $(".layadmin-flexible").children().children().hasClass("layui-icon-shrink-right");
+            console.log(is_right);
+            if(!is_right){
+                var screenWidth = window.innerWidth;
+                if(screenWidth < 992){
+                    $(".layadmin-flexible").children().children().addClass("layui-icon-shrink-right").removeClass("layui-icon-spread-left");
+                    $(".layadmin-flexible").children().children().parents().find("#LAY_app").addClass("layadmin-side-spread-sm");
+                }
+                else {
+                    $(".layadmin-flexible").children().children().addClass("layui-icon-shrink-right").removeClass("layui-icon-spread-left");
+                    $(".layadmin-flexible").children().children().parents().find("#LAY_app").removeClass("layadmin-side-shrink");
+                }
+                //is_right=!is_right;
+            }
         });
         //$(".layui-side-menu ul .layui-nav-itemed").removeClass("layui-nav-itemed");
 
