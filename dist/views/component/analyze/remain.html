@@ -2,7 +2,8 @@
     <div class="layui-fluid">
         <div>
             <div style="background-color: #FFF;padding: 0 10px;margin-top: 10px;">
-                <span class="layui-breadcrumb layui-show" lay-separator="/" style="padding: 10px 0;visibility: visible;">
+                <span class="layui-breadcrumb layui-show" lay-separator="/"
+                      style="padding: 10px 0;visibility: visible;">
                   <a href="#index">首页</a>
                   <a>玩家分析</a>
                   <a><cite>留存统计</cite></a>
@@ -29,16 +30,11 @@
                         </div>
                     </div>
                     <div class="layui-col-lg4" style="padding-left: 20px;">
-                        <span data-content="1"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">今日</span>
-                        <span data-content="2"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">昨日</span>
-                        <span data-content="3"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近7日</span>
-                        <span data-content="4"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近30日</span>
-                        <span data-content="5"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近90日</span>
+                        <span class="dateSet" data-content="1">今日</span>
+                        <span class="dateSet" data-content="2">昨日</span>
+                        <span class="dateSet" data-content="3">近7日</span>
+                        <span class="dateSet" data-content="4">近30日</span>
+                        <span class="dateSet" data-content="5">近90日</span>
                     </div>
                 </div>
                 <div class="layui-form-item">
@@ -51,16 +47,17 @@
             <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
                 <div class="" style="padding: 15px;">查询结果</div>
                 <div class="" style="padding: 15px;">
-
+                    <table id="remainTable" lay-filter="remainTable" lay-even lay-skin="nob"></table>
                 </div>
             </div>
         </div>
         <script>
-            layui.use(['form', 'element','laydate'], function () {
+            layui.use(['form', 'element', 'laydate', 'table'], function () {
+                var $ = layui.$;
                 var form = layui.form;
                 form.render();
 
-                var element=layui.element;
+                var element = layui.element;
                 element.render();
 
                 var laydate = layui.laydate;
@@ -74,6 +71,28 @@
                     type: 'datetime',
                     max: 0,
                 });
+                var table = layui.table;
+                table.render({
+                    elem: '#remainTable',
+                    url: '/Manage/json/tables/analyze/remain.js',
+                    page: true,
+                    //limit:10,
+                    loading: true,
+                    cols: [[
+                        {field: 'date', title: '日期', align: 'left', width: 120, sort: true,},
+                        {field: 'newPlayer', title: '新增玩家', align: 'left', width: 120, sort: true,},
+                        {field: 'remainToday', title: '今日留存', align: 'left', width: 120, sort: true,},
+                        {field: 'remainYesterday', title: '次日留存', align: 'left', width: 120, sort: true,},
+                        {field: 'remain3Day', title: '三日留存', align: 'left', width: 120, sort: true,},
+                        {field: 'remain7Day', title: '七日留存', align: 'left', width: 120, sort: true,},
+                        {field: 'remain15Day', title: '15日留存', align: 'left', width: 120, sort: true,},
+                        {field: 'remain30Day', title: '30日留存', align: 'left', width: 120, sort: true,},
+                        {field: 'remain60Day', title: '60日留存', align: 'left', width: 120, sort: true,}
+                    ]],
+                })
+
+                //选择时间
+                timeSelect();
             });
         </script>
     </div>

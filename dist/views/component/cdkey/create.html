@@ -8,12 +8,163 @@
                   <a><cite>兑换码生成</cite></a>
                 </span>
             </div>
+
+            <div class="layui-row" style="margin-top: 15px;background-color: #FFF;">
+                <div class="layui-col-lg6" style="border-right: 1px solid #E6E6E6;">
+                    <form class="layui-form" style="background-color: #FFF;padding: 15px;">
+                        <div class="layui-row">
+                            <div class="layui-col-lg5 layui-col-md6 layui-col-sm6">
+                                <div class="layui-form-item">
+                                    <div class="layui-form-label" style="text-align: left;">选择礼包</div>
+                                    <div class="layui-input-inline">
+                                        <select name="" lay-verify="required">
+                                            <option value="">请选择礼包名称</option>
+                                            <option value="1">升级大礼包1</option>
+                                            <option value="2">升级大礼包2</option>
+                                            <option value="3">升级大礼包3</option>
+                                            <option value="4">升级大礼包4</option>
+                                            <option value="5">升级大礼包5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-lg5 layui-col-md6 layui-col-sm6">
+                                <div class="layui-form-item">
+                                    <div class="layui-form-label" style="text-align: left;">当前批次</div>
+                                    <div class="layui-input-inline">
+                                        <input type="number" value="1" readonly class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-row">
+                            <div class="layui-col-lg5 layui-col-md6 layui-col-sm6">
+                                <div class="layui-form-item">
+                                    <div class="layui-form-label" style="text-align: left;">限用区服</div>
+                                    <div class="layui-input-inline">
+                                        <select name="serverLimit" lay-verify="required">
+                                            <option value=""></option>
+                                            <option value="0">全部区服</option>
+                                            <option value="1">安卓1区</option>
+                                            <option value="2">安卓2区</option>
+                                            <option value="3">iOS1区</option>
+                                            <option value="4">iOS2区</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-lg5 layui-col-md6 layui-col-sm6">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label" style="text-align: left;">有效时间</label>
+                                    <div class="layui-input-inline">
+                                        <input type="text" id="endTime" required lay-verify="required"
+                                               placeholder="请选择有效时间" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="layui-row">
+                            <div class="layui-col-lg5 layui-col-md6 layui-col-sm6">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label" style="text-align: left;">生成数量</label>
+                                    <div class="layui-input-inline">
+                                        <input type="number" id="createNum" required lay-verify="required"
+                                               placeholder="请输入生成数量" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-col-lg5 layui-col-md6 layui-col-sm6">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label" style="text-align: left;">操作密码</label>
+                                    <div class="layui-input-inline">
+                                        <input type="password" id="createPwd" required lay-verify="required"
+                                               placeholder="请输入操作密码" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="layui-form-item">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="createCDKey">生成</button>
+                                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="layui-col-lg6">
+                    <div class="bgcolor-FFF" style="padding: 15px;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="text-align: left;">生成结果</label>
+                            <div class="layui-input-block">
+                                <textarea class="layui-textarea" id="" rows="9"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
+                <div class="" style="padding: 15px;">生成记录</div>
+                <div class="" style="padding: 15px;">
+                    <table id="createRecord" lay-filter="createRecord" lay-even lay-skin="nob">
+
+                    </table>
+                </div>
+            </div>
         </div>
+
+        <script type="text/html" id="operateBar">
+            <!-- 这里同样支持 laytpl 语法，如： -->
+            {{#  if(d.status =="正常"){ }}
+            <a class="layui-btn layui-btn-xs" lay-event="disable">禁用</a>
+            {{#  } }}
+            {{#  if(d.status =="禁用"){ }}
+            <a class="layui-btn layui-btn-xs" lay-event="able">解禁</a>
+            {{#  } }}
+        </script>
+
         <script>
-            layui.use(['element'], function () {
+            layui.use(['element','form','laydate','table'], function () {
                 var element = layui.element;
                 element.render();
+                var form=layui.form;
+                form.render();
+                var laydate=layui.laydate;
+                laydate.render({
+                    elem: '#endTime',
+                    type: 'datetime',
+                    min: 0,
+                });
+                var table=layui.table;
+                table.render({
+                    elem: '#createRecord',
+                    url: '/Manage/json/tables/cdkey/create_record.js',
+                    page: true,
+                    //limit:10,
+                    loading: true,
+                    cols: [[
+                        {field: 'id', title: 'ID', align: 'center', width: 50, sort: true,},
+                        {field: 'giftid', title: '礼包ID', align: 'center', width: 80, sort: true,},
+                        {field: 'giftname', title: '礼包名字', align: 'left', width: 90,},
+                        {field: 'batch', title: '批次', align: 'center', width: 60,},
+                        {field: 'serverLimit', title: '限用区服', align: 'left', width: 100,},
+                        {field: 'addtime', title: '生成时间', align: 'left', width: 100,},
+                        {field: 'endtime', title: '有效时间', align: 'left', width: 100, sort: true,},
+                        {field: 'content', title: '礼包内容', align: 'left', width: 120,},
+                        {field: 'num', title: '生成数量', align: 'left', width: 100,},
+                        {field: 'username', title: '生成者', align: 'left', width: 80, sort: true,},
+                        {field: 'status', title: '状态', align: 'left', width: 60,},
+                        {field: 'operate', title: '禁用/解禁', align: 'center', width: 100,toolbar: '#operateBar'},
+                        {field: 'rate', title: '使用率', align: 'left', width: 80, sort: true,},
+                        {field: 'remark', title: '备注', align: 'left', width: 100,},
+                    ]],
+                })
             });
+
+
         </script>
     </div>
 </div>

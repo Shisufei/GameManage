@@ -29,16 +29,11 @@
                         </div>
                     </div>
                     <div class="layui-col-lg4" style="padding-left: 20px;">
-                        <span data-content="1"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">今日</span>
-                        <span data-content="2"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">昨日</span>
-                        <span data-content="3"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近7日</span>
-                        <span data-content="4"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近30日</span>
-                        <span data-content="5"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近90日</span>
+                        <span class="dateSet" data-content="1">今日</span>
+                        <span class="dateSet" data-content="2">昨日</span>
+                        <span class="dateSet" data-content="3">近7日</span>
+                        <span class="dateSet" data-content="4">近30日</span>
+                        <span class="dateSet" data-content="5">近90日</span>
                     </div>
                 </div>
 
@@ -99,6 +94,9 @@
                     form.render();
                     var element = layui.element;
                     element.render();
+
+                    //选择时间
+                    timeSelect();
                 });
 
             </script>

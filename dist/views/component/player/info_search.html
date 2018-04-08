@@ -79,7 +79,7 @@
                         <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
                             <div class="" style="padding: 15px;">查询结果</div>
                             <div class="" style="padding: 15px;">
-
+                                <table id="all_user_search_Table" lay-filter="all_user_search_Table" lay-even lay-skin="nob"></table>
                             </div>
                         </div>
                     </div>
@@ -87,11 +87,33 @@
             </div>
         </div>
         <script>
-            layui.use(['form','element'], function () {
+            layui.use(['form','element','table'], function () {
                 var form = layui.form;
                 form.render();
                 var element=layui.element;
                 element.render();
+                var table=layui.table;
+                table.render({
+                    elem: '#all_user_search_Table',
+                    url: '/Manage/json/tables/player/all_user_search.js',
+                    page: true,
+                    //limit:10,
+                    loading: true,
+                    cols: [[
+                        {field: 'money', title: '充值金额', align: 'left', width: 120, sort: true,},
+                        {field: 'userID', title: '玩家ID', align: 'left', width: 100, sort: true,},
+                        {field: 'guid', title: '玩家GUID', align: 'left', width: 100, sort: true,},
+                        {field: 'nickname', title: '玩家昵称', align: 'left', width: 120, sort: true,},
+                        {field: 'gold', title: '当前元宝', align: 'left', width: 120, sort: true,},
+                        {field: 'vip', title: 'VIP等级', align: 'left', width: 120, sort: true,},
+                        {field: 'lastLoginTime', title: '上一次登录时间', align: 'left', width: 200, sort: true,},
+                        {field: 'registerTime', title: '注册时间', align: 'left', width: 200, sort: true,},
+                        {field: 'channel', title: '注册渠道', align: 'left', width: 120, sort: true,},
+                        {field: 'deviceID', title: '注册设备号', align: 'left', width: 120, sort: true,},
+                        {field: 'registerIP', title: '注册时的IP地址', align: 'left', width: 150, sort: true,},
+                        {field: 'guideID', title: '新手引导ID', align: 'left', width: 120, sort: true,}
+                    ]],
+                });
             });
         </script>
     </div>

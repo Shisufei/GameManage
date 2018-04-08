@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="/Manage/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="/Manage/dist/style/admin.css">
+    <link rel="stylesheet" href="/Manage/dist/style/sfui.css">
 
 
     <script>
@@ -319,6 +320,9 @@
                         </a>
                         <dl class="layui-nav-child">
                             <dd data-name="message" data-jump="" class="">
+                                <a href="javascript:;" lay-href="component/cdkey/gift_Manage">礼包管理</a>
+                            </dd>
+                            <dd data-name="message" data-jump="" class="">
                                 <a href="javascript:;" lay-href="component/cdkey/create">兑换码生成</a>
                             </dd>
                             <dd data-name="message" data-jump="" class="">
@@ -377,7 +381,8 @@
 <!--<script src="//res.layui.com/layui/rc/layui.js?t=201800202-1"></script>-->
 
 <script type="text/javascript" src="/Manage/layui/layui.js"></script>
-
+<script type="text/javascript" src="/Manage/dist/script/jquery.js"></script>
+<script type="text/javascript" src="/Manage/dist/script/main.js"></script>
 
 <script>
     // layui.config({
@@ -512,7 +517,17 @@
                 window.location.hash = "#" + hash;
             }
             hash = hash.substring(1);//去除前面的#号
+            //展开侧边栏
+            $(".layui-nav-child>dd>a").each(function () {
+               if($(this).attr("lay-href")==hash){
+                   //console.log($(this));
+                   $(this).parent().addClass("layui-this");
 
+                   $(".layui-nav-item").removeClass("layui-nav-itemed");
+                   $(this).parents(".layui-nav-item").addClass("layui-nav-itemed");
+               }
+            });
+            //获取页面
             $.ajax({
                 url: "./" + hash + ".html",
                 method: "get",
@@ -559,7 +574,7 @@
                 $(this).addClass("layui-nav-itemed").siblings().removeClass("layui-nav-itemed");
             }
             var is_right = $(".layadmin-flexible").children().children().hasClass("layui-icon-shrink-right");
-            console.log(is_right);
+            //console.log(is_right);
             if(!is_right){
                 var screenWidth = window.innerWidth;
                 if(screenWidth < 992){

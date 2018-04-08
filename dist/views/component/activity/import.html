@@ -2,7 +2,8 @@
     <div class="layui-fluid">
         <div>
             <div style="background-color: #FFF;padding: 0 10px;margin-top: 10px;">
-                <span class="layui-breadcrumb layui-show" lay-separator="/" style="padding: 10px 0;visibility: visible;">
+                <span class="layui-breadcrumb layui-show" lay-separator="/"
+                      style="padding: 10px 0;visibility: visible;">
                   <a href="#index">首页</a>
                   <a>活动管理</a>
                   <a><cite>活动导入</cite></a>
@@ -29,16 +30,11 @@
                         </div>
                     </div>
                     <div class="layui-col-lg4" style="padding-left: 20px;">
-            <span data-content="1"
-                  style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">今日</span>
-                        <span data-content="2"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">昨日</span>
-                        <span data-content="3"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近7日</span>
-                        <span data-content="4"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近30日</span>
-                        <span data-content="5"
-                              style="color: #1E9FFF;margin-right: 10px;line-height: 38px;cursor: pointer;">近90日</span>
+                        <span class="dateSet" data-content="1">今日</span>
+                        <span class="dateSet" data-content="2">昨日</span>
+                        <span class="dateSet" data-content="3">近7日</span>
+                        <span class="dateSet" data-content="4">近30日</span>
+                        <span class="dateSet" data-content="5">近90日</span>
                     </div>
                 </div>
 
@@ -103,10 +99,10 @@
             </div>
         </div>
         <script>
-            layui.use(['form','element','laydate'],function () {
+            layui.use(['form', 'element', 'laydate'], function () {
                 var form = layui.form;
                 var laydate = layui.laydate;
-                var element=layui.element;
+                var element = layui.element;
                 element.render();
 
                 form.render();
@@ -120,6 +116,8 @@
                     type: 'datetime',
                     max: 0,
                 });
+                //选择时间
+                timeSelect();
             });
         </script>
     </div>

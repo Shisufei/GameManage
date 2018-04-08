@@ -1,0 +1,193 @@
+<div class="layadmin-tabsbody-item layui-show">
+    <div class="layui-fluid">
+        <style>
+            .layui-table, .layui-table-view {
+                margin: 0;
+            }
+        </style>
+        <div>
+            <div style="background-color: #FFF;padding: 0 10px;margin-top: 10px;">
+                <span class="layui-breadcrumb layui-show" lay-separator="/"
+                      style="padding: 10px 0;visibility: visible;">
+                  <a href="#index">首页</a>
+                  <a>兑换码管理</a>
+                  <a><cite>礼包管理</cite></a>
+                </span>
+            </div>
+
+            <div class="layui-tab layui-tab-brief">
+                <ul class="layui-tab-title" style="background-color: #FFF;">
+                    <li class="layui-this">新增礼包</li>
+                    <li>礼包列表</li>
+                </ul>
+                <div class="layui-tab-content" style="margin-top: 15px;padding: 0;">
+                    <!--新增礼包-->
+                    <div class="layui-tab-item layui-show">
+                        <form class="layui-form" style="background-color: #FFF;padding: 15px;margin-top: 15px;">
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" style="text-align: left;">礼包名字</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="giftName" required lay-verify="required"
+                                           placeholder="请填写礼包名字" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-label" style="text-align: left;">领取类型</div>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="getMethod" value="1" title="单次领取" checked>
+                                    <input type="radio" name="getMethod" value="2" title="批次领取">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-form-label" style="text-align: left;">限用区服</div>
+                                <div class="layui-input-inline">
+                                    <select name="serverLimit" lay-verify="required">
+                                        <option value=""></option>
+                                        <option value="0">全部区服</option>
+                                        <option value="1">安卓1区</option>
+                                        <option value="2">安卓2区</option>
+                                        <option value="3">iOS1区</option>
+                                        <option value="4">iOS2区</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" style="text-align: left;">有效时间</label>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="endTime" required lay-verify="required"
+                                           placeholder="请选择有效时间" autocomplete="off" class="layui-input">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" style="text-align: left;">礼包内容</label>
+                                <div class="layui-input-block">
+                                    <textarea class="layui-textarea" id="giftContent" readonly></textarea>
+                                </div>
+                            </div>
+                            <!--<div class="text-center">-->
+                                <!--<button class="layui-btn" type="button" id="giftContent_OpenBtn">点击添加礼包内容</button>-->
+                            <!--</div>-->
+                            <div class="bor-e6 m-l-110" id="giftContent_Form" style="padding: 15px 15px 0 15px">
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label" style="text-align: left;">添加奖励</label>
+                                    <div class="layui-input-inline">
+                                        <select name="firClass" lay-verify="required">
+                                            <option value="">请选择一级分类</option>
+                                            <option value="0">1</option>
+                                            <option value="1">2</option>
+                                            <option value="2">3</option>
+                                            <option value="3">4</option>
+                                            <option value="4">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <select name="secClass" lay-verify="required">
+                                            <option value="">请选择二级分类</option>
+                                            <option value="0">1.1</option>
+                                            <option value="1">1.2</option>
+                                            <option value="2">1.3</option>
+                                            <option value="3">1.4</option>
+                                            <option value="4">1.5</option>
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline">
+                                        <select name="gift" lay-verify="required">
+                                            <option value="">请选择奖励名称</option>
+                                            <option value="0">1.1.1</option>
+                                            <option value="1">1.1.2</option>
+                                            <option value="2">1.1.3</option>
+                                            <option value="3">1.1.4</option>
+                                            <option value="4">1.1.5</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <label class="layui-form-label" style="text-align: left;">奖励数量</label>
+                                    <div class="layui-input-inline">
+                                        <input type="number" class="layui-input" placeholder="请输入奖励数量">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item">
+                                    <div class="layui-input-block">
+                                        <button class="layui-btn" type="button">添加</button>
+                                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item m-t-xxs">
+                                <div class="layui-form-label" style="text-align: left;">兑换码类型</div>
+                                <div class="layui-input-block">
+                                    <input type="radio" name="cdkeyType" value="1" title="动态兑换码" checked>
+                                    <input type="radio" name="cdkeyType" value="2" title="通用兑换码">
+                                </div>
+                                <div class="layui-input-inline">
+                                    <input type="text" id="cdkeySet" class="layui-input" placeholder="请设置通用兑换码"
+                                           disabled>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label" style="text-align: left;">备注</label>
+                                <div class="layui-input-block">
+                                    <textarea class="layui-textarea" id="remark"></textarea>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <div class="layui-input-block">
+                                    <button class="layui-btn" lay-submit lay-filter="giftAdd">提交</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--礼包列表-->
+                    <div class="layui-tab-item bgcolor-FFF">
+                        <div class="p-xxs">
+                            <table id="giftList" lay-filter="giftList" lay-even lay-skin="nob"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <script>
+            layui.use(['element', 'form', 'laydate','table'], function () {
+                var element = layui.element;
+                element.render();
+                var form = layui.form;
+                form.render();
+                var laydate = layui.laydate;
+                laydate.render({
+                    elem: '#endTime',
+                    type: 'datetime',
+                    min: 0,
+                })
+
+                var $ = layui.$;
+                $("#giftContent_OpenBtn").click(function () {
+                    $(this).hide();
+                    $("#giftContent_Form").show();
+                });
+
+                var table=layui.table;
+                table.render({
+                    elem: '#giftList',
+                    url: '/Manage/json/tables/cdkey/gift_list.js',
+                    page: true,
+                    //limit:10,
+                    loading: true,
+                    cols: [[
+                        {field: 'id', title: 'ID', align: 'center', width: 50, sort: true,},
+                        {field: 'name', title: '礼包名字', align: 'left', width: 150, },
+                        {field: 'getType', title: '领取类型', align: 'left', width: 100,},
+                        {field: 'serverLimit', title: '限用区服', align: 'left', width: 200, sort: true,},
+                        {field: 'endTime', title: '有效时间', align: 'left', width: 150, sort: true,},
+                        {field: 'content', title: '礼包内容', align: 'left', width: 250,},
+                        {field: 'cdkeyType', title: '兑换码类型', align: 'left', width: 100},
+                        {field: 'remark', title: '备注', align: 'left', width: 200},
+                    ]],
+                });
+            });
+        </script>
+    </div>
+</div>
