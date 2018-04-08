@@ -117,7 +117,7 @@
                                     <div style="padding:0 15px;">
                                         <div class="" style="padding: 15px;">查询结果</div>
                                         <div class="" style="padding: 15px;">
-
+                                            <table  id="innerRecharge_singleTable" lay-filter="innerRecharge_singleTable" lay-even lay-skin="nob"></table>
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@
             </div>
         </div>
         <script>
-            layui.use(['form', 'element', 'laydate'], function () {
+            layui.use(['form', 'element', 'laydate','table'], function () {
                 var form = layui.form;
                 form.render();
                 var element = layui.element;
@@ -230,6 +230,23 @@
                     elem: '#endTime',
                     type: 'datetime',
                     max: 0,
+                });
+                var table=layui.table;
+                table.render({
+                    elem: '#innerRecharge_singleTable',
+                    url: '/Manage/json/tables/player/innerRecharge_single.js',
+                    page: true,
+                    //limit:10,
+                    loading: true,
+                    cols: [[
+                        {field: 'server', title: '区服', align: 'center', width: 50, sort: true,},
+                        {field: 'no', title: '编号', align: 'center', width: 50, sort: true,},
+                        {field: 'nickname', title: '昵称', align: 'center', width: 50, sort: true,},
+                        {field: 'vipExperience', title: 'VIP经验', align: 'center', width: 50, sort: true,},
+                        {field: 'goldNum', title: '元宝数量', align: 'center', width: 50, sort: true,},
+                        {field: 'is_firstRecharge', title: '是否首充', align: 'center', width: 50, sort: true,},
+                        {field: 'status', title: '状态', align: 'center', width: 50, sort: true,},
+                    ]],
                 });
 
                 //选择时间

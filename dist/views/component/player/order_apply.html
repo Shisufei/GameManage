@@ -137,7 +137,7 @@
                         <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
                             <div class="" style="padding: 15px;">查询结果</div>
                             <div class="" style="padding: 15px;">
-
+                                <table id="orderStreamTable" lay-filter="orderCheckTable" lay-even lay-skin="nob"></table>
                             </div>
                         </div>
                     </div>
@@ -146,7 +146,7 @@
         </div>
 
         <script>
-            layui.use(['form', 'element','laydate'], function () {
+            layui.use(['form', 'element','laydate','table'], function () {
                 var form = layui.form;
                 var laydate = layui.laydate;
                 var element=layui.element;
@@ -163,6 +163,29 @@
                     type: 'datetime',
                     max: 0,
                 });
+
+                var table=layui.table;
+                table.render({
+                    elem: '#orderStreamTable',
+                    url: '/Manage/json/tables/player/order_stream.js',
+                    page: true,
+                    //limit:10,
+                    loading: true,
+                    cols: [[
+                        {field: 'addtime', title: '补单提交日期', align: 'left', width: 120, sort: true,},
+                        {field: 'no', title: '编号', align: 'left', width: 100, sort: true,},
+                        {field: 'nickname', title: '昵称', align: 'left', width: 120,},
+                        {field: 'server', title: '区服', align: 'left', width: 120, sort: true,},
+                        {field: 'applyContent', title: '补单内容', align: 'left', width: 120,},
+                        {field: 'num', title: '数量', align: 'left', width: 100, sort: true,},
+                        {field: 'applyRemark', title: '补单备注', align: 'left', width: 200,},
+                        {field: 'status', title: '状态', align: 'left', width: 120,},
+                        {field: 'operateRemark', title: '审核备注', align: 'left', width: 120,},
+                        {field: 'operateTime', title: '操作时间', align: 'left', width: 200, sort: true,},
+                    ]],
+                });
+
+
                 //选择时间
                 timeSelect();
 

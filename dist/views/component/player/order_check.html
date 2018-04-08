@@ -53,7 +53,7 @@
             <div style="margin-top: 15px;background-color: #FFF;padding:0 15px;">
                 <div class="" style="padding: 15px;">查询结果</div>
                 <div class="" style="padding: 15px;">
-
+                    <table id="orderCheckTable" lay-filter="orderCheckTable" lay-even lay-skin="nob"></table>
                 </div>
             </div>
             <form class="layui-form" style="border-top: 1px solid #EEE;background-color: #FFF;padding: 15px;">
@@ -77,8 +77,19 @@
             </form>
 
         </div>
+        <script type="text/html" id="checkOperate">
+            <!-- 这里同样支持 laytpl 语法，如： -->
+            <a class="layui-btn layui-btn-xs" lay-event="pass">通过</a>
+            <a class="layui-btn layui-btn-xs layui-btn-danger" lay-event="reject">拒绝</a>
+            <!--{{#  if(d.status =="正常"){ }}-->
+            <!--<a class="layui-btn layui-btn-xs" lay-event="disable">禁用</a>-->
+            <!--{{#  } }}-->
+            <!--{{#  if(d.status =="禁用"){ }}-->
+            <!--<a class="layui-btn layui-btn-xs" lay-event="able">解禁</a>-->
+            <!--{{#  } }}-->
+        </script>
         <script>
-            layui.use(['form','element','laydate'],function () {
+            layui.use(['form','element','laydate','table'],function () {
                 var form = layui.form;
                 var laydate = layui.laydate;
                 var element=layui.element;
@@ -94,6 +105,25 @@
                     elem: '#endTime',
                     type: 'datetime',
                     max: 0,
+                });
+                var table=layui.table;
+                table.render({
+                    elem: '#orderCheckTable',
+                    url: '/Manage/json/tables/player/order_check.js',
+                    page: true,
+                    //limit:10,
+                    loading: true,
+                    cols: [[
+                        {field: 'addtime', title: '补单提交日期', align: 'left', width: 120, sort: true,},
+                        {field: 'no', title: '编号', align: 'left', width: 100, sort: true,},
+                        {field: 'nickname', title: '昵称', align: 'left', width: 120,},
+                        {field: 'server', title: '区服', align: 'left', width: 120, sort: true,},
+                        {field: 'applyType', title: '补单类型', align: 'left', width: 120,},
+                        {field: 'applyContent', title: '补单内容', align: 'left', width: 120,},
+                        {field: 'num', title: '数量', align: 'left', width: 100, sort: true,},
+                        {field: 'applyRemark', title: '理由', align: 'left', width: 200,},
+                        {field: 'operate', title: '操作', align: 'center', width: 120,toolbar:'#checkOperate'}
+                    ]],
                 });
 
                 //选择时间
